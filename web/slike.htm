@@ -1,0 +1,30 @@
+<HTML><HEAD>  <TITLE>Image</TITLE>  
+<script language='javascript'>   
+ var arrTemp=self.location.href.split("?");   
+  var picUrl = (arrTemp.length>0)?arrTemp[1]:"";   
+   var NS = (navigator.appName=="Netscape")?true:false;
+      function FitPic() {      
+        iWidth = (NS)?window.innerWidth:document.body.clientWidth;     
+           iHeight = (NS)?window.innerHeight:document.body.clientHeight;    
+               iWidth = document.images[0].width - iWidth;     
+                  iHeight = document.images[0].height - iHeight;   
+                  if (  iHeight>iWidth) {
+                     window.resizeBy(iWidth, 500);       
+                  
+                  }
+                  else {
+                     window.resizeBy(iWidth, iHeight);       
+                  
+                  }
+                      self.focus();      };  
+                      </script>
+                      <style type="text/css"> 
+html { 
+        overflow: auto; 
+} 
+</style>
+                      </HEAD>
+                      <BODY bgcolor="#000000" onload='FitPic();' topmargin="0" marginheight="0" leftmargin="0" marginwidth="0">
+                        <a href="" onClick="window.close();"><script language='javascript'> 
+       document.write( "<img src='" + picUrl + "' border=0>" );  </script></a>
+       </BODY></HTML>

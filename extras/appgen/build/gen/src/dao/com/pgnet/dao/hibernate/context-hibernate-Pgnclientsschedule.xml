@@ -1,0 +1,4 @@
+    <!--Pgnclientsschedule-START-->
+    <bean id="pgnclientsscheduleDAO" class="com.popultrade.dao.hibernate.PgnclientsscheduleDAOHibernate" autowire="byName"/>
+    <!--Pgnclientsschedule-END-->
+</beans>

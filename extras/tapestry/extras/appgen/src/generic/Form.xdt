@@ -1,0 +1,66 @@
+<XDtTagDef:tagDef namespace="Form" handler="org.example.antbook.xdoclet.FormTagsHandler"/>package <XDtForm:parentPackageName/>.webapp.action;
+
+import org.apache.tapestry.IRequestCycle;
+import org.apache.tapestry.event.PageEvent;
+import org.apache.tapestry.event.PageRenderListener;
+
+import <XDtPackage:packageName/>.<XDtForm:className/>;
+import <XDtForm:parentPackageName/>.service.Manager;
+
+public abstract class <XDtForm:className/>Form extends BasePage implements PageRenderListener {
+    public abstract Manager getManager();
+    public abstract void setManager(Manager mgr);
+    public abstract void set<XDtForm:className/>(<XDtForm:className/> <XDtForm:classNameLower/>);
+    public abstract <XDtForm:className/> get<XDtForm:className/>();
+
+    public void pageBeginRender(PageEvent event) {
+        if ((get<XDtForm:className/>() == null) && !event.getRequestCycle().isRewinding()) {
+            set<XDtForm:className/>(new <XDtForm:className/>());
+        } else if (event.getRequestCycle().isRewinding()) { // add
+            set<XDtForm:className/>(new <XDtForm:className/>());
+        }
+    }
+
+    public void cancel(IRequestCycle cycle) {
+        if (log.isDebugEnabled()) {
+            log.debug("Entering 'cancel' method");
+        }
+
+        cycle.activate("<XDtForm:classNameLower/>s");
+    }
+
+    public void delete(IRequestCycle cycle) {
+        if (log.isDebugEnabled()) {
+            log.debug("entered 'delete' method");
+        }
+
+        getManager().removeObject(<XDtForm:className/>.class, get<XDtForm:className/>().<XDtMethodEx:idField getType="getterName"/>());
+
+        <XDtForm:className/>List nextPage = (<XDtForm:className/>List) cycle.getPage("<XDtForm:classNameLower/>s");
+        nextPage.setMessage(getMessage("<XDtForm:classNameLower/>.deleted"));
+        cycle.activate(nextPage);
+    }
+
+    public void save(IRequestCycle cycle) {
+        if (getValidationDelegate().getHasErrors()) {
+            return;
+        }
+
+        boolean isNew = (get<XDtForm:className/>().<XDtMethodEx:idField getType="getterName"/>() == null);
+
+        getManager().saveObject(get<XDtForm:className/>());
+
+        String key = (isNew) ? "<XDtForm:classNameLower/>.added" : "<XDtForm:classNameLower/>.updated";
+
+        if (isNew) {
+            <XDtForm:className/>List nextPage = (<XDtForm:className/>List) cycle.getPage("<XDtForm:classNameLower/>s");
+            nextPage.setMessage(getMessage(key));
+            cycle.activate(nextPage);
+        } else {
+            <XDtForm:className/>Form nextPage = (<XDtForm:className/>Form) cycle.getPage("<XDtForm:classNameLower/>Form");
+            nextPage.setMessage(getMessage(key));
+            cycle.activate("<XDtForm:classNameLower/>Form"); // return to current page
+        }
+        
+    }
+}

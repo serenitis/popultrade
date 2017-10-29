@@ -1,0 +1,46 @@
+<XDtTagDef:tagDef namespace="Form" handler="org.example.antbook.xdoclet.FormTagsHandler"/>
+<XDtTagDef:tagDef namespace="MethodEx" handler="org.example.antbook.xdoclet.MethodExTagsHandler"/>
+package <XDtForm:parentPackageName/>.dao;
+
+import java.util.List;
+import java.sql.Connection;
+import <XDtPackage:packageName/>.<XDtForm:className/>;
+
+public interface <XDtForm:className/>DAO extends DAO {
+
+	public List get<XDtForm:className/>s(final <XDtForm:className/> <XDtForm:classNameLower/>,final int pageNumber,final int pageSize,String dodatni_sql_pogoji,String orderby,String orderby_smer);
+	public int getSt<XDtForm:className/>(final <XDtForm:className/> <XDtForm:classNameLower/>,String dodatni_sql_pogoji);
+	
+	public List get<XDtForm:className/>s2(final <XDtForm:className/> <XDtForm:classNameLower/>,final String orderby,final String orderby_smer,final String dodaten_hql);
+	public List get<XDtForm:className/>s(final <XDtForm:className/> <XDtForm:classNameLower/>,final String orderby,final String orderby_smer);
+	public Session getSessionProcedura();
+
+
+    /**
+     * Retrieves all of the <XDtForm:classNameLower/>s
+     */
+    public List get<XDtForm:className/>s(<XDtForm:className/> <XDtForm:classNameLower/>);
+
+    /**
+     * Gets <XDtForm:classNameLower/>'s information based on primary key. An
+     * ObjectRetrievalFailureException Runtime Exception is thrown if 
+     * nothing is found.
+     * 
+     * @param <XDtMethodEx:idField getType="propertyName"/> the <XDtForm:classNameLower/>'s <XDtMethodEx:idField getType="propertyName"/>
+     * @return <XDtForm:classNameLower/> populated <XDtForm:classNameLower/> object
+     */
+    public <XDtForm:className/> get<XDtForm:className/>(final <XDtMethodEx:idField getType="propertyType"/> <XDtMethodEx:idField getType="propertyName"/>);
+
+    /**
+     * Saves a <XDtForm:classNameLower/>'s information
+     * @param <XDtForm:classNameLower/> the object to be saved
+     */	
+    public void save<XDtForm:className/>(<XDtForm:className/> <XDtForm:classNameLower/>);
+
+	/**
+     * Removes a <XDtForm:classNameLower/> from the database by <XDtMethodEx:idField getType="propertyName"/>
+     * @param <XDtMethodEx:idField getType="propertyName"/> the <XDtForm:classNameLower/>'s <XDtMethodEx:idField getType="propertyName"/>
+     */
+    public void remove<XDtForm:className/>(final <XDtMethodEx:idField getType="propertyType"/> <XDtMethodEx:idField getType="propertyName"/>);
+}
+

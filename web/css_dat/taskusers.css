@@ -1,0 +1,509 @@
+/* ---- CUSTOM TASKS ---- */
+
+tr.plava1   {
+	width:98%;
+	height:55px;
+	background:#FFF;
+	margin:8px auto;
+	border-style:solid;
+	border-width:1px;
+	border-color:silver;
+	display:block;
+	
+   /* font-size: 20px;
+    font-weight: normal;*/
+    text-transform: uppercase;
+    padding: 0px;
+   
+   /* vertical-align: middle;
+   margin: -21px -21px -21px -21px;*/
+   
+  /*  border-top: 3px solid;*/
+    background-color: #eee;
+    background-image: linear-gradient(#fff, #eee);
+
+}
+
+/*==================================================
+ * Effect 2
+ * ===============================================*/
+.teffect2
+{
+  position: relative;
+}
+.teffect2:before, .teffect2:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 9px;
+  left: 5px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  box-shadow: 0 7px 7px #777;
+  transform: rotate(-1.8deg);
+}
+.teffect2:after
+{
+  transform: rotate(1.8deg);
+  right: 5px;
+  left: auto;
+}
+
+
+.theaderblack {
+    position: relative;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0px;
+   
+    vertical-align: middle;
+    margin: 0px 0px 0px 0px;
+    border-bottom: 18px solid;
+    background-color: #eee;
+    background-image: linear-gradient(#fff, #eee);
+}
+   .theadergreen {
+    position: relative;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0px;
+   
+    vertical-align: middle;
+    margin: 0px 0px 0px 0px;
+    border-bottom: 18px solid #288f23;
+    background-color: #eee;
+    background-image: linear-gradient(#fff, #eee);
+}
+
+.theaderred {
+    position: relative;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0px;
+   
+    vertical-align: middle;
+    margin: 0px 0px 0px 0px;
+    border-bottom: 18px solid #a71111;
+    background-color: #eee;
+    background-image: linear-gradient(#fff, #eee);
+}
+.theaderyellow {
+    position: relative;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0px;
+   
+    vertical-align: middle;
+    margin: 0px 0px 0px 0px;
+    border-bottom: 18px solid #ecf405;
+    background-color: #eee;
+    background-image: linear-gradient(#fff, #eee);
+}
+.theaderblue {
+    position: relative;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0px;
+   
+    vertical-align: middle;
+    margin: 0px 0px 0px 0px;
+    border-bottom: 18px solid #44a3d5;
+    background-color: #eee;
+    background-image: linear-gradient(#fff, #eee);
+}
+
+        /* ---- CUSTOM TASKS END ---- */
+
+tr.Checked {
+background-color:#7EBAED;
+}
+
+
+tr.silver td:nth-child(odd) {
+background-color:#92b9df;
+padding:5px;
+font-size:12px;
+height:25px;
+font-family:verdana;
+color:black;
+}
+tr.silver td:nth-child(even) {
+background-color:#9fbddc;
+padding:5px;
+font-size:12px;
+height:25px;
+font-family:verdana;
+color:black;
+}
+
+
+tr.rollOver td:nth-child(even) {
+background-color:#cee2f6;
+padding:5px;
+font-size:12px;
+height:25px;
+font-family:verdana;
+color:black;
+-webkit-transition: width 2s; /* Safari */
+   background: linear-gradient(to right, #cee2f6 50%, #92b9df 50%);
+    background-size: 200% 100%;
+    background-position:left bottom;
+    transition:all .8s ease;
+}
+
+tr.rollOver td:nth-child(even):hover{
+background-position:right bottom;
+}
+
+tr.rollOver td:nth-child(odd) {
+background-color:#bcd9f5;
+padding:5px;
+font-size:12px;
+height:25px;
+font-family:verdana;
+color:black;
+-webkit-transition: width 2s; /* Safari */
+   background: linear-gradient(to right, #bcd9f5 50%, #92b9df 50%);
+    background-size: 200% 100%;
+    background-position:left bottom;
+    transition:all .8s ease;
+}
+
+tr.rollOver td:nth-child(odd):hover{
+background-position:right bottom;
+}
+
+/*
+tr.plava1 td:nth-child(odd) {
+background-color:#e3e3e3;
+padding:5px;
+font-size:12px;
+height:25px;
+font-family:verdana;
+color:black;
+}
+tr.plava1 td:nth-child(even) {
+background-color:#ebebeb;
+padding:5px;
+font-size:12px;
+height:25px;
+font-family:verdana;
+color:black;
+}*/
+/*
+tr.plava2 td:last-child {
+
+}
+
+tr.plava2  {
+
+padding:5px;
+
+}*/
+/*
+tr.plava2  td:nth-child(odd){
+background-color:#f6f6f6;
+padding:5px;
+font-size:12px;
+height:25px;
+font-family:verdana;
+color:black;
+}
+tr.plava2  td:nth-child(even){
+background-color:#ffffff;
+padding:5px;
+font-size:12px;
+height:25px;
+font-family:verdana;
+color:black;
+}
+
+*/
+
+
+td.plava1 {
+background-color:#D2EAFF;
+
+}
+td.plava2 {
+background-color:#ADD9FF;
+
+}
+tr.red {
+background-color:#FFFFCC;
+}
+tr.green {
+background-color:#99FF99;
+}
+tr.rollOver {
+background-color:#6CA9E1;
+}
+
+option.red1 {
+background-color:#ADD9FF;
+}
+
+tr.opiscell {
+background-color:#D2EAFF;
+}
+tr.valuecell {
+background-color:#ADD9FF;
+}
+
+
+
+td.opiscell {
+background-color:#e3e3e3;
+
+padding:5px;
+font-size:11px;
+height:25px;
+font-family:verdana;
+}
+td.valuecell {
+background-color:#f6f6f6;
+
+padding:5px;
+font-size:11px;
+height:25px;
+font-family:verdana;
+}
+
+
+
+
+/*head hint barve */
+
+th.opiscell {
+background-color:#ADD9FF;
+padding: 1px;
+
+}
+th.valuecell {
+background-color:#D2EAFF;
+padding: 1px;
+}
+/*fonti tabele list*/
+table.fontilist {
+	font-family: Verdana; 
+	font-size: 7pt;
+
+}
+
+table.fontilist td {
+	padding:3px;
+
+}
+
+/*fonti tabel*/
+table.fonti {
+	
+	font-family: Verdana; 
+	font-size: 8pt;
+	
+	
+	
+}
+/*submit gumb*/
+/*input.fontisubmit { 
+	
+	font-family: Verdana; 
+	font-size: 8pt;
+	
+	
+}*/
+
+
+
+		/* format za input textarea */
+/*.inputIEta {
+
+border-style:solid; 
+
+border-width:1px;
+
+border-color:#DBDFE6;
+border-left-color:DBDFE6;
+border-top-color:#ABADB3;
+font-family: Verdana; 
+font-size: 8pt;
+padding:1px;
+
+}*/
+	
+	/* format za input */
+/*.inputIEx {
+
+border-style:solid; 
+
+border-width:1px;
+
+border-color:#DBDFE6;
+border-left-color:DBDFE6;
+border-top-color:#ABADB3;
+font-family: Verdana; 
+font-size: 8pt;
+padding:1px;
+height:19px;
+}*/
+/* format za input velike crke*/
+.inputIExVC {
+
+border-style:solid; 
+
+border-width:1px;
+
+border-color:#DBDFE6;
+border-left-color:DBDFE6;
+border-top-color:#ABADB3;
+font-family: Verdana; 
+font-size: 8pt;
+padding:1px;
+text-transform:uppercase;
+height:19px;
+}
+
+
+
+/* format za input velike crke ajax*/
+.inputIExaVC {
+
+border-style:solid; 
+
+border-width:1px;
+
+border-color:#DBDFE6;
+border-left-color:DBDFE6;
+border-top-color:#ABADB3;
+font-family: Verdana; 
+font-size: 8pt;
+padding:1px;
+background-image:url('ajaxback.gif');
+background-repeat:no-repeat;
+padding-left:9px;
+text-transform:uppercase;
+height:19px;
+}
+
+
+.inputIExa {
+
+border-style:solid; 
+border-width:1px;
+ 
+border-color:#DBDFE6;
+border-left-color:DBDFE6;
+border-top-color:#ABADB3;
+font-family: Verdana; 
+font-size: 8pt;
+padding:1px;
+background-image:url('ajaxback.gif');
+background-repeat:no-repeat;
+padding-left:9px;
+height:19px;
+}
+
+
+.inputIEx,textarea{ 
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #f6f6f6, 0 10px 15px #f6f6f6 inset;
+    border-radius:2px;
+padding:4px;
+font-family: Verdana; 
+font-size: 8pt;
+
+
+}
+.inputIEx:focus,textarea:focus {
+    background: #fff; 
+    border:1px solid #555; 
+    box-shadow: 0 0 3px #aaa; 
+padding:4px;
+font-family: Verdana; 
+font-size: 8pt;
+
+
+}
+
+.inputIEx:required:invalid, textarea:required:invalid { /* when a field is considered invalid by the browser */
+    background: #fff url(images/invalid.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #d45252;
+    border-color: #red;
+}
+
+.inputIEx:required:valid, textarea:required:valid { /* when a field is considered valid by the browser */
+    background: #fff url(images/valid.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #5cd053;
+    border-color: #28921f;
+}
+
+
+
+/* Button Style */
+input.fontisubmit {
+    background-color: #2f82b1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2f82b1), to(#1e6c91));
+    background: -webkit-linear-gradient(top, #2f82b1, #1e6c91);
+    background: -moz-linear-gradient(top, #2f82b1, #1e6c91);
+    background: -ms-linear-gradient(top, #2f82b1, #1e6c91);
+    background: -o-linear-gradient(top, #2f82b1, #1e6c91);
+    background: linear-gradient(top, #2f82b1, #1e6c91);
+    border: 1px solid #115f91;
+    border-bottom: 1px solid #2b7399;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    box-shadow: inset 0 1px 0 0 #74add5;
+    -webkit-box-shadow: 0 1px 0 0 #74add5 inset ;
+    -moz-box-shadow: 0 1px 0 0 #74add5 inset;
+    -ms-box-shadow: 0 1px 0 0 #74add5 inset;
+    -o-box-shadow: 0 1px 0 0 #74add5 inset;
+    color: white;
+    font-weight: bold;
+    padding: 6px 20px;
+    text-align: center;
+    text-shadow: 0 -1px 0 #154967;
+}
+input.fontisubmit:hover {
+    opacity:.85;
+    cursor: pointer; 
+}
+input.fontisubmit:active {
+    border: 1px solid #1e6491;
+    box-shadow: 0 0 10px 5px #0b466b inset; 
+    -webkit-box-shadow:0 0 10px 5px #0b466b inset ;
+    -moz-box-shadow: 0 0 10px 5px #0b466b inset;
+    -ms-box-shadow: 0 0 10px 5px #0b466b inset;
+    -o-box-shadow: 0 0 10px 5px #0b466b inset;
+     
+}
+
+
+.inputIEx:required:valid + .form_hint {background: #28921f;} /* change form hint color when valid */
+
+.form_hint {
+    background: #d45252;
+    border-radius: 3px 3px 3px 3px;
+    color: white;
+    margin-left:8px;
+    padding: 1px 6px;
+    z-index: 999; /* hints stay above all other elements */
+    position: absolute; /* allows proper formatting if hint is two lines */
+    display: none;
+}
+
+
+
+
+
+

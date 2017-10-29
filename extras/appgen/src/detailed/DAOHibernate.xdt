@@ -1,0 +1,323 @@
+<XDtTagDef:tagDef namespace="Form" handler="org.example.antbook.xdoclet.FormTagsHandler"/>
+<XDtTagDef:tagDef namespace="MethodEx" handler="org.example.antbook.xdoclet.MethodExTagsHandler"/>
+package <XDtForm:parentPackageName/>.dao.hibernate;
+
+import java.util.List;
+
+import <XDtPackage:packageName/>.<XDtForm:className/>;
+import <XDtForm:parentPackageName/>.dao.<XDtForm:className/>DAO;
+import org.springframework.orm.ObjectRetrievalFailureException;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.criterion.Example;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.engine.spi.SessionFactoryImplementor;
+import org.hibernate.service.jdbc.connections.spi.ConnectionProvider;
+
+import org.springframework.orm.hibernate4.HibernateCallback;
+
+
+public class <XDtForm:className/>DAOHibernate extends BaseDAOHibernate implements <XDtForm:className/>DAO {
+
+
+
+
+
+  public List get<XDtForm:className/>s(final <XDtForm:className/> <XDtForm:classNameLower/>,final int pageNumber,final int pageSize,String dodatni_sql_pogoji,String orderby,String orderby_smer) {
+        //return getHibernateTemplate().find("from <XDtForm:className/> order by datum_<XDtForm:className/>a");
+
+      Example ex = Example.create(<XDtForm:classNameLower/>).ignoreCase().excludeZeroes().enableLike(MatchMode.START);     
+        
+        Criteria cri = currentSession().createCriteria(<XDtForm:className/>.class).add(ex);
+        if (<XDtForm:classNameLower/>.getId()!=null) {
+        	cri.add(Restrictions.eq("id",<XDtForm:classNameLower/>.getId()));
+        }
+
+        if (!orderby.equals("")) {
+
+        	if (orderby.indexOf(",")!=-1) {
+        	String[] yum = orderby.split(",");
+        	
+        	for (int i=0;i<yum.length;i++) {
+        		
+        		if (yum[i].indexOf(" ")!=-1) {
+        			if (yum[i].indexOf("asc")!=-1) {
+        				cri.addOrder(Order.asc(yum[i].substring(0,yum[i].indexOf(" "))));	
+        			}
+        			else {
+        				cri.addOrder(Order.desc(yum[i].substring(0,yum[i].indexOf(" "))));	
+        			}
+        		}
+        		else {
+        			cri.addOrder(Order.desc(yum[i].trim()));	
+        		}
+        		
+        	}
+
+        	}
+        	else {
+        	if (orderby_smer.equals("asc")) {
+        cri.addOrder(Order.asc(orderby));
+        	}
+        	else {
+        		cri.addOrder(Order.desc(orderby));	
+        	}
+        	}
+
+        	
+        }
+        if (!dodatni_sql_pogoji.equals("")) {
+        	cri.add(Restrictions.sqlRestriction(dodatni_sql_pogoji));
+        }
+        
+
+        return cri.setFirstResult((pageNumber - 1) * pageSize).setMaxResults(pageSize).list();
+
+    }
+	
+
+
+
+
+
+
+	public int getSt<XDtForm:className/>(final <XDtForm:className/> <XDtForm:classNameLower/>,String dodatni_sql_pogoji) {
+		
+		try {
+			Example ex = Example.create(<XDtForm:classNameLower/>).excludeZeroes();
+			Criteria criteria = currentSession().createCriteria(<XDtForm:className/>.class).add(ex) ; 
+
+				
+			  if (<XDtForm:classNameLower/>.getId()!=null) {
+				  criteria.add(Restrictions.eq("id",<XDtForm:classNameLower/>.getId()));
+		        }
+			criteria.setProjection(Projections.rowCount()); 
+			   if (!dodatni_sql_pogoji.equals("")) {
+				   criteria.add(Restrictions.sqlRestriction(dodatni_sql_pogoji));
+		        }
+			return ((Long)criteria.list().get(0)).intValue(); 
+			
+		}
+		catch (Exception ex) {
+			org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(this.getClass());
+			log.error(ex.toString());
+		}
+		return 0;
+	}
+
+	public Session getSessionProcedura() {
+		
+		return this.currentSession();
+	}
+
+
+    
+    public List get<XDtForm:className/>s(final <XDtForm:className/> <XDtForm:classNameLower/>,final String orderby,final String orderby_smer) {
+        //  return getHibernateTemplate().find("from <XDtForm:className/>");
+
+      
+          if (<XDtForm:classNameLower/> == null) {
+              return getHibernateTemplate().find("from <XDtForm:className/>");
+          } else {
+              // filter on properties set in the <XDtForm:classNameLower/>
+              HibernateCallback callback = new HibernateCallback() {
+              	
+                  public Object doInHibernate(Session session) throws HibernateException {
+                 // System.out.println("Sifrant opis:::::::::::::::: "+<XDtForm:classNameLower/>.getSFT_SIFRA());
+                  	Example ex = Example.create(<XDtForm:classNameLower/>).ignoreCase().enableLike(MatchMode.START);
+                      Criteria cri= session.createCriteria(<XDtForm:className/>.class).add(ex);
+                      
+                  
+                      
+                      
+                      if (!orderby.equals("")) {
+                      	
+                      	
+                      	if (orderby.indexOf(",")!=-1) {
+                      	String[] yum = orderby.split(",");
+                      	
+                      	for (int i=0;i<yum.length;i++) {
+                      		
+                      		if (yum[i].indexOf(" ")!=-1) {
+                      			if (yum[i].indexOf("asc")!=-1) {
+                      				cri.addOrder(Order.asc(yum[i].substring(0,yum[i].indexOf(" "))));	
+                      			}
+                      			else {
+                      				cri.addOrder(Order.desc(yum[i].substring(0,yum[i].indexOf(" "))));	
+                      			}
+                      		}
+                      		else {
+                      			cri.addOrder(Order.desc(yum[i].trim()));	
+                      		}
+                      		
+                      	}
+                      	
+                      	
+                      	}
+                      	else {
+                      	if (orderby_smer.equals("asc")) {
+                      cri.addOrder(Order.asc(orderby));
+                      	}
+                      	else {
+                      		cri.addOrder(Order.desc(orderby));	
+                      	}
+                      	}
+                      	
+                      	
+                      	
+                      	
+                      }
+                      
+                     return cri.list();
+                  }
+              };
+              return (List) getHibernateTemplate().execute(callback);
+          }
+      }
+	
+	 
+    public List get<XDtForm:className/>s2(final <XDtForm:className/> <XDtForm:classNameLower/>,final String orderby,final String orderby_smer,final String dodaten_hql) {
+        //  return getHibernateTemplate().find("from <XDtForm:className/>");
+
+      
+          if (<XDtForm:classNameLower/> == null) {
+              return getHibernateTemplate().find("from <XDtForm:className/>");
+          } else {
+              // filter on properties set in the <XDtForm:classNameLower/>
+              HibernateCallback callback = new HibernateCallback() {
+              	
+                  public Object doInHibernate(Session session) throws HibernateException {
+                 // System.out.println("Sifrant opis:::::::::::::::: "+<XDtForm:classNameLower/>.getSFT_SIFRA());
+                  	Example ex = Example.create(<XDtForm:classNameLower/>).ignoreCase().enableLike(MatchMode.START);
+                      Criteria cri= session.createCriteria(<XDtForm:className/>.class).add(ex);
+                      
+                   if (<XDtForm:classNameLower/>.getId()!=null) {
+        	cri.add(Restrictions.eq("id",<XDtForm:classNameLower/>.getId()));
+        }
+                      
+                      if (!orderby.equals("")) {
+                      	
+                      	
+                      	if (orderby.indexOf(",")!=-1) {
+                      	String[] yum = orderby.split(",");
+                      	
+                      	for (int i=0;i<yum.length;i++) {
+                      		
+                      		if (yum[i].indexOf(" ")!=-1) {
+                      			if (yum[i].indexOf("asc")!=-1) {
+                      				cri.addOrder(Order.asc(yum[i].substring(0,yum[i].indexOf(" "))));	
+                      			}
+                      			else {
+                      				cri.addOrder(Order.desc(yum[i].substring(0,yum[i].indexOf(" "))));	
+                      			}
+                      		}
+                      		else {
+                      			cri.addOrder(Order.desc(yum[i].trim()));	
+                      		}
+                      		
+                      	}
+                      	
+                      	
+                      	}
+                      	else {
+                      	if (orderby_smer.equals("asc")) {
+                      cri.addOrder(Order.asc(orderby));
+                      	}
+                      	else {
+                      		cri.addOrder(Order.desc(orderby));	
+                      	}
+                      	}
+                      	
+                      	
+                      	
+                      	
+                      }
+                      if (!dodaten_hql.equals("")) {
+                      	cri.add(Restrictions.sqlRestriction(dodaten_hql));
+                      }
+                     return cri.list();
+                  }
+              };
+              return (List) getHibernateTemplate().execute(callback);
+          }
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * @see <XDtForm:parentPackageName/>.dao.<XDtForm:className/>DAO#get<XDtForm:className/>s(<XDtPackage:packageName/>.<XDtForm:className/>)
+     */
+    public List get<XDtForm:className/>s(final <XDtForm:className/> <XDtForm:classNameLower/>) {
+       if (<XDtForm:classNameLower/> == null) {
+            return getHibernateTemplate().find("from <XDtForm:className/>");
+        } else {
+            // filter on properties set in the <XDtForm:classNameLower/>
+            HibernateCallback callback = new HibernateCallback() {
+                public Object doInHibernate(Session session) throws HibernateException {
+                    Example ex = Example.create(<XDtForm:classNameLower/>).ignoreCase().enableLike(MatchMode.START);
+                    
+                    
+                    Criteria cri = session.createCriteria(<XDtForm:className/>.class).add(ex);
+if (<XDtForm:classNameLower/>.getId()!=null) {
+                    cri.add(Restrictions.eq("id",<XDtForm:classNameLower/>.getId()));	
+                    }
+                    
+                return cri.list();
+                }
+            };
+            return (List) getHibernateTemplate().execute(callback);
+        }
+    }
+
+    /**
+     * @see <XDtForm:parentPackageName/>.dao.<XDtForm:className/>DAO#get<XDtForm:className/>(<XDtMethodEx:idField getType="propertyType"/> <XDtMethodEx:idField getType="propertyName"/>)
+     */
+    public <XDtForm:className/> get<XDtForm:className/>(final <XDtMethodEx:idField getType="propertyType"/> <XDtMethodEx:idField getType="propertyName"/>) {
+        <XDtForm:className/> <XDtForm:classNameLower/> = (<XDtForm:className/>) getHibernateTemplate().get(<XDtForm:className/>.class, <XDtMethodEx:idField getType="propertyName"/>);
+        
+        if (<XDtForm:classNameLower/> == null) {
+            log.warn("uh oh, <XDtForm:classNameLower/> with <XDtMethodEx:idField getType="propertyName"/> '" + <XDtMethodEx:idField getType="propertyName"/> + "' not found...");
+            throw new ObjectRetrievalFailureException(<XDtForm:className/>.class, <XDtMethodEx:idField getType="propertyName"/>);
+        }
+
+        return <XDtForm:classNameLower/>;
+    }
+
+    /**
+     * @see <XDtForm:parentPackageName/>.dao.<XDtForm:className/>DAO#save<XDtForm:className/>(<XDtForm:className/> <XDtForm:classNameLower/>)
+     */    
+    public void save<XDtForm:className/>(final <XDtForm:className/> <XDtForm:classNameLower/>) {
+        getHibernateTemplate().saveOrUpdate(<XDtForm:classNameLower/>);
+        getHibernateTemplate().flush();
+    }
+
+    /**
+     * @see <XDtForm:parentPackageName/>.dao.<XDtForm:className/>DAO#remove<XDtForm:className/>(<XDtMethodEx:idField getType="propertyType"/> <XDtMethodEx:idField getType="propertyName"/>)
+     */
+    public void remove<XDtForm:className/>(final <XDtMethodEx:idField getType="propertyType"/> <XDtMethodEx:idField getType="propertyName"/>) {
+        getHibernateTemplate().delete(get<XDtForm:className/>(<XDtMethodEx:idField getType="propertyName"/>));
+        getHibernateTemplate().flush();
+    }
+}

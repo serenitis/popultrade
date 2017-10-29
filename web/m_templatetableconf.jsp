@@ -1,0 +1,449 @@
+<%@ page contentType="text/html; " import="java.sql.*,javax.naming.*,java.io.*,java.util.*,java.text.*,java.util.Date"%>
+<jsp:useBean id="ConPool" scope="application" class="com.popultrade.webapp.conPool"/>
+<jsp:useBean id="control" scope="session" class="com.popultrade.webapp.control" />
+<jsp:useBean id="nul" scope="session" class="com.popultrade.webapp.chkNull" />
+<jsp:useBean id="contextUtil" scope="session" class="com.popultrade.webapp.ContextUtil" />
+  
+
+
+<%
+request.setCharacterEncoding(control.encoding);
+response.setContentType("text/html; charset="+control.encoding);
+response.addHeader("Pragma" , "No-cache") ;
+response.addHeader("Cache-Control", "no-cache") ;
+response.addDateHeader("Expires", 0);
+if (control.getUser().equals("anonymous") || !control.getPrivilegijeUporabnika().equals("A")) {
+%><jsp:forward page="m_loginu.html"/><%
+}
+%>
+<%
+
+// stevilo prikazov vrstic
+
+int stpri = 100;
+
+
+// steje stevilo vrstic
+int stej = 0;
+
+// barve vrstic
+String[] colors = {"plava1","plava2","silver"};
+
+
+
+
+
+// stevilo vrstic
+int stvrstic=0;
+
+boolean iskanje = false;
+
+
+try {
+
+	
+	com.popultrade.dao.TemplateTablesDAO daobb = (com.popultrade.dao.TemplateTablesDAO)contextUtil.getBeanDao("templateTablesDAO",pageContext.getServletContext());
+	Hashtable vsebb = daobb.getTableStructure(request.getParameter("tablename"));
+
+	
+	
+	
+	
+// get list from daoobject
+com.popultrade.dao.TemplateTablesColDAO dao = (com.popultrade.dao.TemplateTablesColDAO)contextUtil.getBeanDao("templateTablesColDAO",pageContext.getServletContext());
+
+ 
+if (request.getParameter("akcija")!=null && request.getParameter("akcija").equals("DELETE"))  {
+	
+
+	dao.removeTemplateTablesCol(new Long(request.getParameter("id")));
+
+	
+}
+
+
+int pagenum=1;
+int stizpisov=stpri;
+
+if (request.getParameter("pagenumber")!=null && !request.getParameter("pagenumber").equals("")) {
+
+	pagenum = Integer.parseInt(request.getParameter("pagenumber"));
+	session.putValue("pagenumberTemplateTablesCol",pagenum+"");
+	}
+	else {
+	if (session.getValue("pagenumberTemplateTablesCol")!=null) {
+	pagenum = Integer.parseInt(session.getValue("pagenumberTemplateTablesCol")+"");
+	}
+	}
+
+
+com.popultrade.model.TemplateTablesCol sif = new com.popultrade.model.TemplateTablesCol();
+sif.setId_nad(new Long(request.getParameter("id_nad")));
+int strec = dao.getStTemplateTablesCol(sif,"");
+
+
+
+List lis =null;
+
+lis = dao.getTemplateTablesCols(sif,pagenum,stizpisov,"","field_name","asc");
+
+
+
+
+
+
+
+%>
+<html><head><title></title></head>
+<style>
+
+A:hover{color:red}
+#divBg{position:absolute; top:0; left:0; visibility:hidden; height:10}
+DIV.clSub{position:relative; top:-5; font-family:arial,helvetica; font-size:8px; padding:10px; visibility:hidden;
+background-color:Silver; layer-background-color:2686D8}
+</style>
+<style type=text/css>
+
+@import "barve.css";
+@import "tooltipcss.css";
+@import "sbuttoni.css";
+</style>
+<script language='javascript' src='colors.js' ></script>
+<script type="text/javascript" language="JavaScript" src="tooltip.js"></script>
+<script type="text/javascript" language="JavaScript" src="datum2.jsp"></script>
+<script language=javascript>
+
+// potrditev brisanja
+function vprasaj() {
+  var a = window.confirm("Potrdi brisanje?");
+
+  if (a==true) {
+
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+
+
+
+
+
+
+
+function chg() {
+
+
+    
+
+
+
+//parent.frames[1].location = "nic.jsp";
+//parent.frames[2].location = "nic.jsp";
+top.parent.frames[3].location = "nic.jsp";
+}
+</script>
+<script type="text/javascript" language="JavaScript" src="helpmaster3.js"></script>
+
+<script language=javascript>
+
+
+	               	   p1="Ime polja";
+	               	   
+	               	   p2="Type polja";
+						p3="Dolzina polja v bazi";
+	               	   
+	               	   p4="Java type polja";
+						
+	               	   
+	               	   </script>
+
+
+
+<body  style="margin: 0"   background="podlaga.jpg" bgproperties="fixed"  onLoad="chg();menuBarInit()" >
+<div id="popup" style="position:absolute; z-index:1; visibility: hidden"></div>
+<div id="divBg" style="width:100%">
+<table width="100%" border="0" cellspacing="1" cellpadding="1" align="CENTER" valign="MIDDLE" style=" font-family:Verdana; font-size:8pt">
+     
+
+        <tr bgcolor="2686D8">
+
+ <td width=35% align=left bgcolor="ADD9FF" onmouseout="hideddrivetip()"  ondragover="allowDrop(event)"  ondrop="drop('TemplateTablesCol','')"  onmousemove="ddrivetip(p1)"><b>Hibernate tabela</b> - Ime polja </td>
+
+            	   <td width=20% align=center bgcolor="D2EAFF" onmouseout="hideddrivetip()" onmousemove="ddrivetip(p2)">Type</td>
+               
+            	 <td width=15% align=center bgcolor="ADD9FF" onmouseout="hideddrivetip()"    onmousemove="ddrivetip(p3)">Dol</td>
+
+            	   <td width=20% align=center bgcolor="D2EAFF" onmouseout="hideddrivetip()" onmousemove="ddrivetip(p4)">JT</td>
+         
+               
+            	   
+
+              
+                 <td  bgcolor="D2EAFF" align=center>
+                 
+           
+                 
+                 <a onClick="return godown('m_templatetablescol_edit.jsp?opcija=new&siframm=new&sifrant=null&id_nad=<%=request.getParameter("id_nad") %>')" href="Javascript: PGAPP()"><img title="Dodaj novo polje" border="0" src="vnos.gif" /></a>
+                 
+                 
+                 </td>
+        </tr>
+ 
+
+</table>
+</div>
+
+
+
+
+
+
+<table width=100% cellspacing=1  cellpadding=1  style=" font-family: Verdana; font-size: 7pt">
+<tr><td colspan=5><font style="font-size:9pt">&nbsp;</font></td></tr>
+
+<%
+
+/// menja barvo
+int br = 0;
+String oe_kup_nap = "";
+
+
+Iterator it = lis.iterator();
+
+
+while (it.hasNext()){  // while start
+	
+	com.popultrade.model.TemplateTablesCol vseb = (com.popultrade.model.TemplateTablesCol)(it.next());
+		stvrstic++;
+
+		
+		
+		
+if (br==2){
+  br=0;
+}
+
+
+if (!nul.jeN(vseb.getType()).equals("")) {
+
+
+
+	
+	
+if (vseb.getId().toString().equals(nul.jeNull(request.getParameter("idback")))) {
+%>
+<tr class="<%=colors[br]%>" id=sprememba onMouseOver="colors(this,'rollOver')" onMouseOut="colors(this,'<%=colors[br]%>')" >
+<%
+}
+else {
+%>
+<tr class="<%=colors[br]%>"  onMouseOver="colors(this,'rollOver')" onMouseOut="colors(this,'<%=colors[br]%>')" >
+<%
+}
+
+%>
+<td width="35%" align="left" draggable="true"  ondragover="allowDrop(event)"  ondrop="drop('TemplateGumbi','&_Ltemplatehead_id=<%=vseb.getId() %>')"  ondragstart="dragStart(event,'TemplateTablesCol','tem1','&id=<%=vseb.getId()%>')" >
+
+
+<%=(vsebb.containsKey(vseb.getField_name())?"":"<font color=red>") %>
+<%=nul.jeNull(vseb.getField_name())%>
+<%=(vsebb.containsKey(vseb.getField_name())?"":"</font>") %>
+</td>
+	<td width="20%" align="left"><%=nul.jeNull(vseb.getType())%></td>
+<td width="15%" align="left"><%=nul.jeNull(vseb.getWidth())%></td>
+<td width="20%" align="left"><%=nul.jeNull(vseb.getH_type_java())%></td>
+
+
+
+<td  align="center"><a href="Javascript:PGAPP()" onCLick="return go('<%=vseb.getId()%>&id_nad=<%=request.getParameter("id_nad") %>&opcija=spremeni&siframm=new&idback=<%=vseb.getId()%>&sifrant=<%=request.getParameter("sifrant")%>',1)"><img src="u.gif" border=0 onClick="kliknivSivo(this,'<%=colors[br]%>');" title="Spremeni podatke"></a><a onClick="vprasaj()?document.location='m_templatetableconf.jsp?akcija=DELETE&id_nad=<%=request.getParameter("id_nad") %>&id=<%=vseb.getId()%>&sifrant=<%=request.getParameter("sifrant")%>':''" href='#'><img src="x.gif" border=0 title="Brisi"></a></td>
+</tr>
+
+<%
+/// dodam se 2x
+br++;
+
+
+if (nul.jeN(vseb.getH_datefromto()).equals("1")) {
+
+	for (int cc=1;cc<=2;cc++) {
+	if (br==2){
+		  br=0;
+		}
+	%>
+	
+	
+	<tr class="<%=colors[br]%>"  onMouseOver="colors(this,'rollOver')" onMouseOut="colors(this,'<%=colors[br]%>')" >
+
+<td width="35%" align="left" draggable="true"  ondragover="allowDrop(event)"  ondrop="drop('TemplateGumbi','&_Ltemplatehead_id=<%=vseb.getId() %>')"  ondragstart="dragStart(event,'TemplateTablesCol','tem1','&id=<%=vseb.getId()%>')" >
+
+
+<%=(vsebb.containsKey(vseb.getField_name()+cc)?"":"<font color=red>") %>
+<%=nul.jeNull(vseb.getField_name())%><%=cc %>
+<%=(vsebb.containsKey(vseb.getField_name()+cc)?"":"</font>") %>
+</td>
+	<td width="20%" align="left"><%=nul.jeNull(vseb.getType())%></td>
+<td width="15%" align="left"></td>
+<td width="20%" align="left"><%=nul.jeNull(vseb.getH_type_java())%></td>
+
+
+
+<td  align="center">
+
+	
+</td>
+</tr>
+	
+	<%
+	br++;
+	}
+	
+	
+}
+
+%>
+
+
+
+
+
+
+
+
+<%
+
+System.out.println("ZZZZZZZZZZZZZZZZZ 2");
+}
+}/// while end
+
+
+ %>
+  
+</table>
+
+
+<script language=javascript>
+function go(asd,vv){
+  if (vv == 1){
+    aaa = "m_templatetablescol_edit.jsp?izvor=frame&id="+asd;
+    top.parent.frames[3].location = aaa;
+  }
+
+return false;
+}
+function godown(asd){
+	top.parent.frames[3].location = asd;
+return false;
+}
+function godown2(asd){
+	top.top.parent.frames[3].location = asd;
+return false;
+}
+function PGAPP(){
+}
+
+</script>
+
+
+<%
+// st izpisov
+if (strec>stizpisov) {
+	String iskk="";
+	if (iskanje) {
+		iskk="&isk=1";
+		}
+%><p align=center>
+<table  border="0" cellpadding="7" cellspacing="1" style="border-collapse: collapse; font-family:Verdana; font-size:8pt;">
+<tr bgcolor="ededed">
+<td align=center >
+Browse page: </td><td>
+ <a style="text-decoration:none;color:black"  href="m_templatetableconf.jsp?pagenumber=1<%=iskk%>">first</a></td><td>|</td>
+
+
+<%
+int vse=0;
+int ststr=0;
+
+int prvii=nul.jeNull(session.getValue("pagenumberTemplateTablesCol")+"").equals("")?1:Integer.parseInt(session.getValue("pagenumberTemplateTablesCol")+"");
+
+if (prvii>1) {
+int prej = prvii-1;
+%>
+<td>
+ <a style="text-decoration:none;color:black"  href="m_templatetableconf.jsp?pagenumber=<%=prej%><%=iskk%>">previous</a></td>
+
+<td>|</td>
+<%
+}
+%>
+<%
+
+for (int y=0;y<strec;y++) {
+vse++;
+if (vse==stizpisov) {
+vse=0;
+
+ststr++;
+if ((prvii-5)<ststr && ststr<(prvii+5)) {
+%>
+<td align=center bgcolor="<%=nul.jeNull(session.getValue("pagenumberTemplateTablesCol")+"").equals(ststr+"")?"white":"ededed" %>"> <a hrefs="" style="text-decoration:none;color:black"  href="m_templatetableconf.jsp?pagenumber=<%=ststr %><%=iskk%>"><%=ststr %></a> </td><td>|</td>
+<%
+
+}
+}
+%>
+
+<%
+}
+if (vse!=0) {
+	%>
+	<td align=center bgcolor="<%=nul.jeNull(session.getValue("pagenumberTemplateTablesCol")+"").equals(ststr+1+"")?"white":"ededed" %>"> <a hrefs="" style="text-decoration:none;color:black"  href="m_templatetableconf.jsp?pagenumber=<%=ststr+1 %><%=iskk%>"><%=ststr+1 %></a> </td><td>|</td>
+	<%
+	
+	
+}
+
+
+
+if (prvii<=ststr) {
+int prej = prvii+1;
+%>
+<td>
+ <a style="text-decoration:none;color:black"  href="m_templatetableconf.jsp?pagenumber=<%=prej%><%=iskk%>">next</a></td>
+
+<td>|</td>
+<%
+}
+%>
+
+
+
+<td><a style="text-decoration:none;color:black"  href="m_templatetableconf.jsp?pagenumber=<%=ststr+1%><%=iskk%>">last</a></td>
+<td>|</td>
+<td >
+page: <%=nul.jeNull(session.getValue("pagenumberTemplateTablesCol")+"").equals("")?"1":session.getValue("pagenumberTemplateTablesCol")%> of <%=ststr+1%> </td>
+<td>|</td>
+<td>
+records: <%=strec%></td>
+</tr>
+</table></p>
+<%
+}
+%>
+
+</body></html>
+ <%
+
+}
+catch (Exception ex){
+	org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(this.getClass());
+	
+	log.error(ex.toString());
+}
+
+%>
+
+
+

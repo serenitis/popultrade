@@ -1,0 +1,13 @@
+
+.jqte-test {
+	display:block;
+	margin:0 0 10px;
+	padding:6px;
+	width:95%;
+	background:red;
+	border:silver 1px solid;
+	font-size:13px;
+}
+textarea.jqte-test, div.jqte-test, span.jqte-test {
+	min-height:100px;
+}

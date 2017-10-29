@@ -1,0 +1,190 @@
+tr.Checked {
+background-color:#7EBAED;
+}
+
+tr.silver {
+background-color:#6CA9E1;
+}
+
+
+tr.plava1  {
+background-color:#D2EAFF;
+
+}
+tr.plava2  {
+background-color:#ADD9FF;
+
+}
+
+
+td.plava1 {
+background-color:#D2EAFF;
+
+}
+td.plava2 {
+background-color:#ADD9FF;
+
+}
+tr.red {
+background-color:#FFFFCC;
+}
+tr.green {
+background-color:#99FF99;
+}
+tr.rollOver {
+background-color:#6CA9E1;
+}
+
+option.red1 {
+background-color:#ADD9FF;
+}
+
+tr.opiscell {
+background-color:#D2EAFF;
+}
+tr.valuecell {
+background-color:#ADD9FF;
+}
+
+td.opiscell {
+background-color:#ADD9FF;
+padding: 1px;
+}
+td.valuecell {
+background-color:#D2EAFF;
+padding: 1px;
+}
+
+/*head hint barve */
+
+th.opiscell {
+background-color:#ADD9FF;
+padding: 1px;
+}
+th.valuecell {
+background-color:#D2EAFF;
+padding: 1px;
+}
+/*fonti tabele list*/
+table.fontilist {
+	font-family: Verdana; 
+	font-size: 7pt;
+
+}
+
+table.fontilist td {
+	padding:3px;
+
+}
+
+/*fonti tabel*/
+table.fonti {
+	
+	font-family: Verdana; 
+	font-size: 8pt;
+	
+	
+	
+}
+/*submit gumb*/
+input.fontisubmit { 
+	
+	font-family: Verdana; 
+	font-size: 8pt;
+	
+	
+}
+
+
+
+		/* format za input textarea */
+.inputIEta {
+
+border-style:solid; 
+
+border-width:1px;
+
+border-color:#DBDFE6;
+border-left-color:DBDFE6;
+border-top-color:#ABADB3;
+font-family: Verdana; 
+font-size: 8pt;
+padding:1px;
+
+}
+	
+	/* format za input */
+.inputIEx {
+
+border-style:solid; 
+
+border-width:1px;
+
+border-color:#DBDFE6;
+border-left-color:DBDFE6;
+border-top-color:#ABADB3;
+font-family: Verdana; 
+font-size: 8pt;
+padding:1px;
+height:19px;
+}
+/* format za input velike crke*/
+.inputIExVC {
+
+border-style:solid; 
+
+border-width:1px;
+
+border-color:#DBDFE6;
+border-left-color:DBDFE6;
+border-top-color:#ABADB3;
+font-family: Verdana; 
+font-size: 8pt;
+padding:1px;
+text-transform:uppercase;
+height:19px;
+}
+
+
+
+/* format za input velike crke ajax*/
+.inputIExaVC {
+
+border-style:solid; 
+
+border-width:1px;
+
+border-color:#DBDFE6;
+border-left-color:DBDFE6;
+border-top-color:#ABADB3;
+font-family: Verdana; 
+font-size: 8pt;
+padding:1px;
+background-image:url('ajaxback.gif');
+background-repeat:no-repeat;
+padding-left:9px;
+text-transform:uppercase;
+height:19px;
+}
+
+
+.inputIExa {
+
+border-style:solid; 
+border-width:1px;
+ 
+border-color:#DBDFE6;
+border-left-color:DBDFE6;
+border-top-color:#ABADB3;
+font-family: Verdana; 
+font-size: 8pt;
+padding:1px;
+background-image:url('ajaxback.gif');
+background-repeat:no-repeat;
+padding-left:9px;
+height:19px;
+}
+
+
+
+

@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MenuConfig>
+    <Displayers>
+        <Displayer name="CoolMenu" type="net.sf.navigator.displayer.CoolMenuDisplayer4"/>
+        <Displayer name="ListMenu" type="net.sf.navigator.displayer.ListMenuDisplayer"/>
+    </Displayers>
+    <Menus>
+        <Menu name="MainMenu" title="mainMenu.title" page="/mainMenu.html" width="90"/>
+        <Menu name="UserMenu" title="menu.user" description="User Menu" forward="editProfile"/>
+        <Menu name="FileUpload" title="menu.selectFile" description="File Upload" forward="selectFile"/>
+        
+        <Menu name="AdminMenu" title="menu.admin" description="Admin Menu" roles="admin" width="120">
+            <Item name="ViewUsers" title="menu.admin.users" forward="viewUsers"/>
+            <Item name="ReloadContext" title="menu.admin.reload" action="reload"/>
+            <Item name="FlushCache" title="menu.flushCache" action="flush" roles="admin"/>
+            <Item name="Clickstream" title="menu.clickstream" page="/clickstreams.jsp" roles="admin"/>
+        </Menu>
+        
+        <!--Users-START-->
+        <Menu name="UsersMenu" title="usersList.title" page="/userss.html"/>
+        <!--Users-END-->
+        <!--Linki-START-->
+        <Menu name="LinkiMenu" title="linkiList.title" page="/linkis.html"/>
+        <!--Linki-END-->
+        <!--Novice-START-->
+        <Menu name="NoviceMenu" title="noviceList.title" page="/novices.html"/>
+        <!--Novice-END-->
+        <!--Uploads-START-->
+        <Menu name="UploadsMenu" title="uploadsList.title" page="/uploadss.html"/>
+        <!--Uploads-END-->
+        <!--Players-START-->
+        <Menu name="PlayersMenu" title="playersList.title" page="/playerss.html"/>
+        <!--Players-END-->
+        <!--Matches-START-->
+        <Menu name="MatchesMenu" title="matchesList.title" page="/matchess.html"/>
+        <!--Matches-END-->
+        
+        <!--Classific-START-->
+        <Menu name="ClassificMenu" title="classificList.title" page="/classifpopultrade.html"/>
+        <!--Classific-END-->
+        <!--Galerija-START-->
+        <Menu name="GalerijaMenu" title="galerijaList.title" page="/galerijas.html"/>
+        <!--Galerija-END-->
+        <!--GlavnaStatistika-START-->
+        <Menu name="GlavnaStatistikaMenu" title="glavnaStatistikaList.title" page="/glavnaStatistikas.html"/>
+        <!--GlavnaStatistika-END-->
+        <!--GlavnaStatistikaImena-START-->
+        <Menu name="GlavnaStatistikaImenaMenu" title="glavnaStatistikaImenaList.title" page="/glavnaStatistikaImenas.html"/>
+        <!--GlavnaStatistikaImena-END-->
+        <!--GlavnaStatistikaKategorije-START-->
+        <Menu name="GlavnaStatistikaKategorijeMenu" title="glavnaStatistikaKategorijeList.title" page="/glavnaStatistikaKategorijes.html"/>
+        <!--GlavnaStatistikaKategorije-END-->
+        <!--Galerija_slike-START-->
+        <Menu name="Galerija_slikeMenu" title="galerija_slikeList.title" page="/galerija_slikes.html"/>
+        <!--Galerija_slike-END-->
+        <!--Teksti-START-->
+        <Menu name="TekstiMenu" title="tekstiList.title" page="/tekstis.html"/>
+        <!--Teksti-END-->
+        <!--MatchesPlayers-START-->
+        <Menu name="MatchesPlayersMenu" title="matchesPlayersList.title" page="/matchesPlayerss.html"/>
+        <!--MatchesPlayers-END-->
+        <!--Sifranti-START-->
+        <Menu name="SifrantiMenu" title="sifrantiList.title" page="/sifrantis.html"/>
+        <!--Sifranti-END-->
+        
+        <!--PlayersSezona-START-->
+        <Menu name="PlayersSezonaMenu" title="playersSezonaList.title" page="/playersSezonas.html"/>
+        <!--PlayersSezona-END-->
+        <!--Galerija_video-START-->
+        <Menu name="Galerija_videoMenu" title="galerija_videoList.title" page="/galerija_videos.html"/>
+        <!--Galerija_video-END-->
+        <!--Sms-START-->
+        <Menu name="SmsMenu" title="smsList.title" page="/smss.html"/>
+        <!--Sms-END-->
+        
+        <!--UsersPodjetja-START-->
+        <Menu name="UsersPodjetjaMenu" title="usersPodjetjaList.title" page="/usersPodjetjas.html"/>
+        <!--UsersPodjetja-END-->
+        
+        
+        <!--Podjetja-START-->
+        <Menu name="PodjetjaMenu" title="podjetjaList.title" page="/podjetjas.html"/>
+        <!--Podjetja-END-->
+        <!--Language-START-->
+        <Menu name="LanguageMenu" title="languageList.title" page="/languages.html"/>
+        <!--Language-END-->
+        <!--Jeziki-START-->
+        <Menu name="JezikiMenu" title="jezikiList.title" page="/jezikis.html"/>
+        <!--Jeziki-END-->
+        <!--Ladja-START-->
+        <Menu name="LadjaMenu" title="ladjaList.title" page="/ladjas.html"/>
+        <!--Ladja-END-->
+        <!--Drzava-START-->
+        <Menu name="DrzavaMenu" title="drzavaList.title" page="/drzavas.html"/>
+        <!--Drzava-END-->
+        <!--Luka-START-->
+        <Menu name="LukaMenu" title="lukaList.title" page="/lukas.html"/>
+        <!--Luka-END-->
+        <!--Ladjar-START-->
+        <Menu name="LadjarMenu" title="ladjarList.title" page="/ladjars.html"/>
+        <!--Ladjar-END-->
+        
+        <!--Esd30-START-->
+        <Menu name="Esd30Menu" title="esd30List.title" page="/esd30s.html"/>
+        <!--Esd30-END-->
+        <!--Esd10-START-->
+        <Menu name="Esd10Menu" title="esd10List.title" page="/esd10s.html"/>
+        <!--Esd10-END-->
+        <!--Esd20-START-->
+        <Menu name="Esd20Menu" title="esd20List.title" page="/esd20s.html"/>
+        <!--Esd20-END-->
+        <!--Sifrant-START-->
+        <Menu name="SifrantMenu" title="sifrantList.title" page="/sifrants.html"/>
+        <!--Sifrant-END-->
+        
+        <!--Stranke-START-->
+        <Menu name="StrankeMenu" title="strankeList.title" page="/strankes.html"/>
+        <!--Stranke-END-->
+        <!--Planprihodov-START-->
+        <Menu name="PlanprihodovMenu" title="planprihodovList.title" page="/planprihodovs.html"/>
+        <!--Planprihodov-END-->
+        <!--Planprihodovarh-START-->
+        <Menu name="PlanprihodovarhMenu" title="planprihodovarhList.title" page="/planprihodovarhs.html"/>
+        <!--Planprihodovarh-END-->
+        <!--Isd_dvh_gl-START-->
+        <Menu name="Isd_dvh_glMenu" title="isd_dvh_glList.title" page="/isd_dvh_gls.html"/>
+        <!--Isd_dvh_gl-END-->
+        <!--Isd_dvh_pos-START-->
+        <Menu name="Isd_dvh_posMenu" title="isd_dvh_posList.title" page="/isd_dvh_poss.html"/>
+        <!--Isd_dvh_pos-END-->
+        <!--Isd_dvh_vrs-START-->
+        <Menu name="Isd_dvh_vrsMenu" title="isd_dvh_vrsList.title" page="/isd_dvh_vrss.html"/>
+        <!--Isd_dvh_vrs-END-->
+        <!--Esd16-START-->
+        <Menu name="Esd16Menu" title="esd16List.title" page="/esd16s.html"/>
+        <!--Esd16-END-->
+        <!--Esd50-START-->
+        <Menu name="Esd50Menu" title="esd50List.title" page="/esd50s.html"/>
+        <!--Esd50-END-->
+        <!--Esd51-START-->
+        <Menu name="Esd51Menu" title="esd51List.title" page="/esd51s.html"/>
+        <!--Esd51-END-->
+        <!--Esd52-START-->
+        <Menu name="Esd52Menu" title="esd52List.title" page="/esd52s.html"/>
+        <!--Esd52-END-->
+        <!--Esd53-START-->
+        <Menu name="Esd53Menu" title="esd53List.title" page="/esd53s.html"/>
+        <!--Esd53-END-->
+        <!--Esd54-START-->
+        <Menu name="Esd54Menu" title="esd54List.title" page="/esd54s.html"/>
+        <!--Esd54-END-->
+        <!--Esd351-START-->
+        <Menu name="Esd351Menu" title="esd351List.title" page="/esd351s.html"/>
+        <!--Esd351-END-->
+        <!--Esd15-START-->
+        <Menu name="Esd15Menu" title="esd15List.title" page="/esd15s.html"/>
+        <!--Esd15-END-->
+        <!--Esd60-START-->
+        <Menu name="Esd60Menu" title="esd60List.title" page="/esd60s.html"/>
+        <!--Esd60-END-->
+        <!--Esd61-START-->
+        <Menu name="Esd61Menu" title="esd61List.title" page="/esd61s.html"/>
+        <!--Esd61-END-->
+        <!--Esd66-START-->
+        <Menu name="Esd66Menu" title="esd66List.title" page="/esd66s.html"/>
+        <!--Esd66-END-->
+        <!--Esd21-START-->
+        <Menu name="Esd21Menu" title="esd21List.title" page="/esd21s.html"/>
+        <!--Esd21-END-->
+        <!--Prevozniki-START-->
+        <Menu name="PrevoznikiMenu" title="prevoznikiList.title" page="/prevoznikis.html"/>
+        <!--Prevozniki-END-->
+        <!--Wse_prijave-START-->
+        <Menu name="Wse_prijaveMenu" title="wse_prijaveList.title" page="/wse_prijaves.html"/>
+        <!--Wse_prijave-END-->
+        <!--Wse_log-START-->
+        <Menu name="Wse_logMenu" title="wse_logList.title" page="/wse_logs.html"/>
+        <!--Wse_log-END-->
+        
+        <!--Esd11-START-->
+        <Menu name="Esd11Menu" title="esd11List.title" page="/esd11s.html"/>
+        <!--Esd11-END-->
+        <!--Wse_log_pozicije-START-->
+        <Menu name="Wse_log_pozicijeMenu" title="wse_log_pozicijeList.title" page="/wse_log_pozicijes.html"/>
+        <!--Wse_log_pozicije-END-->
+        <!--Carinarnice-START-->
+        <Menu name="CarinarniceMenu" title="carinarniceList.title" page="/carinarnices.html"/>
+        <!--Carinarnice-END-->
+        <!--Obvestila-START-->
+        <Menu name="ObvestilaMenu" title="obvestilaList.title" page="/obvestilas.html"/>
+        <!--Obvestila-END-->
+        <!--FrameSize-START-->
+        <Menu name="FrameSizeMenu" title="frameSizeList.title" page="/frameSizes.html"/>
+        <!--FrameSize-END-->
+        <!--Esd70-START-->
+        <Menu name="Esd70Menu" title="esd70List.title" page="/esd70s.html"/>
+        <!--Esd70-END-->
+        <!--Esd76-START-->
+        <Menu name="Esd76Menu" title="esd76List.title" page="/esd76s.html"/>
+        <!--Esd76-END-->
+        <!--LukSklad-START-->
+        <Menu name="LukSkladMenu" title="lukSkladList.title" page="/lukSklads.html"/>
+        <!--LukSklad-END-->
+        <!--Esd80-START-->
+        <Menu name="Esd80Menu" title="esd80List.title" page="/esd80s.html"/>
+        <!--Esd80-END-->
+        <!--Esd81-START-->
+        <Menu name="Esd81Menu" title="esd81List.title" page="/esd81s.html"/>
+        <!--Esd81-END-->
+        <!--Esd82-START-->
+        <Menu name="Esd82Menu" title="esd82List.title" page="/esd82s.html"/>
+        <!--Esd82-END-->
+        <!--Esd86-START-->
+        <Menu name="Esd86Menu" title="esd86List.title" page="/esd86s.html"/>
+        <!--Esd86-END-->
+        <!--Esd90-START-->
+        <Menu name="Esd90Menu" title="esd90List.title" page="/esd90s.html"/>
+        <!--Esd90-END-->
+        <!--Esd91-START-->
+        <Menu name="Esd91Menu" title="esd91List.title" page="/esd91s.html"/>
+        <!--Esd91-END-->
+        <!--Esd92-START-->
+        <Menu name="Esd92Menu" title="esd92List.title" page="/esd92s.html"/>
+        <!--Esd92-END-->
+        <!--Esd93-START-->
+        <Menu name="Esd93Menu" title="esd93List.title" page="/esd93s.html"/>
+        <!--Esd93-END-->
+        <!--Esd95-START-->
+        <Menu name="Esd95Menu" title="esd95List.title" page="/esd95s.html"/>
+        <!--Esd95-END-->
+        <!--Esd96-START-->
+        <Menu name="Esd96Menu" title="esd96List.title" page="/esd96s.html"/>
+        <!--Esd96-END-->
+        <!--Esd72-START-->
+        <Menu name="Esd72Menu" title="esd72List.title" page="/esd72s.html"/>
+        <!--Esd72-END-->
+        <!--Mail_message-START-->
+        <Menu name="Mail_messageMenu" title="mail_messageList.title" page="/mail_messages.html"/>
+        <!--Mail_message-END-->
+        <!--Esd56-START-->
+        <Menu name="Esd56Menu" title="esd56List.title" page="/esd56s.html"/>
+        <!--Esd56-END-->
+        <!--Uvsd_datoteka-START-->
+        <Menu name="Uvsd_datotekaMenu" title="uvsd_datotekaList.title" page="/uvsd_datotekas.html"/>
+        <!--Uvsd_datoteka-END-->
+        <!--PodjetjaUpload315-START-->
+        <Menu name="PodjetjaUpload315Menu" title="podjetjaUpload315List.title" page="/podjetjaUpload315s.html"/>
+        <!--PodjetjaUpload315-END-->
+        <!--Esd12-START-->
+        <Menu name="Esd12Menu" title="esd12List.title" page="/esd12s.html"/>
+        <!--Esd12-END-->
+        <!--TemplateHead-START-->
+        <Menu name="TemplateHeadMenu" title="templateHeadList.title" page="/templateHeads.html"/>
+        <!--TemplateHead-END-->
+        <!--Prevodi-START-->
+        <Menu name="PrevodiMenu" title="prevodiList.title" page="/prevodis.html"/>
+        <!--Prevodi-END-->
+        <!--TemplateClass-START-->
+        <Menu name="TemplateClassMenu" title="templateClassList.title" page="/templateClasss.html"/>
+        <!--TemplateClass-END-->
+        <!--TemplateList-START-->
+        <Menu name="TemplateListMenu" title="templateListList.title" page="/templateLists.html"/>
+        <!--TemplateList-END-->
+        <!--TemplateClassClass_vrednosti-START-->
+        <Menu name="TemplateClassClass_vrednostiMenu" title="templateClassClass_vrednostiList.title" page="/templateClassClass_vrednostis.html"/>
+        <!--TemplateClassClass_vrednosti-END-->
+        <!--TemplateClassClass-START-->
+        <Menu name="TemplateClassClassMenu" title="templateClassClassList.title" page="/templateClassClasss.html"/>
+        <!--TemplateClassClass-END-->
+        <!--TemplateView-START-->
+        <Menu name="TemplateViewMenu" title="templateViewList.title" page="/templateViews.html"/>
+        <!--TemplateView-END-->
+        <!--TemplateUi-START-->
+        <Menu name="TemplateUiMenu" title="templateUiList.title" page="/templateUis.html"/>
+        <!--TemplateUi-END-->
+        <!--TemplateUiDodatno-START-->
+        <Menu name="TemplateUiDodatnoMenu" title="templateUiDodatnoList.title" page="/templateUiDodatnos.html"/>
+        <!--TemplateUiDodatno-END-->
+        <!--TemplateGumbiParametri-START-->
+        <Menu name="TemplateGumbiParametriMenu" title="templateGumbiParametriList.title" page="/templateGumbiParametris.html"/>
+        <!--TemplateGumbiParametri-END-->
+        <!--TemplateGumbi-START-->
+        <Menu name="TemplateGumbiMenu" title="templateGumbiList.title" page="/templateGumbis.html"/>
+        <!--TemplateGumbi-END-->
+        <!--TemplateDDPogoji-START-->
+        <Menu name="TemplateDDPogojiMenu" title="templateDDPogojiList.title" page="/templateDDPogojis.html"/>
+        <!--TemplateDDPogoji-END-->
+        <!--TemplateDD-START-->
+        <Menu name="TemplateDDMenu" title="templateDDList.title" page="/templateDDs.html"/>
+        <!--TemplateDD-END-->
+        <!--TemplateFunkcija-START-->
+        <Menu name="TemplateFunkcijaMenu" title="templateFunkcijaList.title" page="/templateFunkcijas.html"/>
+        <!--TemplateFunkcija-END-->
+        <!--TemplateFunkcijaStart-START-->
+        <Menu name="TemplateFunkcijaStartMenu" title="templateFunkcijaStartList.title" page="/templateFunkcijaStarts.html"/>
+        <!--TemplateFunkcijaStart-END-->
+        <!--TemplateMenu-START-->
+        <Menu name="TemplateMenuMenu" title="templateMenuList.title" page="/templateMenus.html"/>
+        <!--TemplateMenu-END-->
+        <!--TemplateHeadReset-START-->
+        <Menu name="TemplateHeadResetMenu" title="templateHeadResetList.title" page="/templateHeadResets.html"/>
+        <!--TemplateHeadReset-END-->
+        <!--TemplatePP-START-->
+        <Menu name="TemplatePPMenu" title="templatePPList.title" page="/templatePPs.html"/>
+        <!--TemplatePP-END-->
+        <!--Pnppnav0-START-->
+        <Menu name="Pnppnav0Menu" title="pnppnav0List.title" page="/pnppnav0s.html"/>
+        <!--Pnppnav0-END-->
+        <!--Pnppnla0-START-->
+        <Menu name="Pnppnla0Menu" title="pnppnla0List.title" page="/pnppnla0s.html"/>
+        <!--Pnppnla0-END-->
+        <!--Pnppdni0-START-->
+        <Menu name="Pnppdni0Menu" title="pnppdni0List.title" page="/pnppdni0s.html"/>
+        <!--Pnppdni0-END-->
+        <!--Pnppinc0-START-->
+        <Menu name="Pnppinc0Menu" title="pnppinc0List.title" page="/pnppinc0s.html"/>
+        <!--Pnppinc0-END-->
+        <!--Pnppinn0-START-->
+        <Menu name="Pnppinn0Menu" title="pnppinn0List.title" page="/pnppinn0s.html"/>
+        <!--Pnppinn0-END-->
+        <!--Pnppnhm0-START-->
+        <Menu name="Pnppnhm0Menu" title="pnppnhm0List.title" page="/pnppnhm0s.html"/>
+        <!--Pnppnhm0-END-->
+        <!--Pnppnrd0-START-->
+        <Menu name="Pnppnrd0Menu" title="pnppnrd0List.title" page="/pnppnrd0s.html"/>
+        <!--Pnppnrd0-END-->
+        <!--Pnppnrv0-START-->
+        <Menu name="Pnppnrv0Menu" title="pnppnrv0List.title" page="/pnppnrv0s.html"/>
+        <!--Pnppnrv0-END-->
+        <!--Pnppzsl0-START-->
+        <Menu name="Pnppzsl0Menu" title="pnppzsl0List.title" page="/pnppzsl0s.html"/>
+        <!--Pnppzsl0-END-->
+        <!--Dokument-START-->
+        <Menu name="DokumentMenu" title="dokumentList.title" page="/dokuments.html"/>
+        <!--Dokument-END-->
+        <!--Linija-START-->
+        <Menu name="LinijaMenu" title="linijaList.title" page="/linijas.html"/>
+        <!--Linija-END-->
+        <!--Sp1pmap0-START-->
+        <Menu name="Sp1pmap0Menu" title="sp1pmap0List.title" page="/sp1pmap0s.html"/>
+        <!--Sp1pmap0-END-->
+        <!--Pnpperr0-START-->
+        <Menu name="Pnpperr0Menu" title="pnpperr0List.title" page="/pnpperr0s.html"/>
+        <!--Pnpperr0-END-->
+        <!--Sp1mssz0-START-->
+        <Menu name="Sp1mssz0Menu" title="sp1mssz0List.title" page="/sp1mssz0s.html"/>
+        <!--Sp1mssz0-END-->
+        <!--Pnppszs0-START-->
+        <Menu name="Pnppszs0Menu" title="pnppszs0List.title" page="/pnppszs0s.html"/>
+        <!--Pnppszs0-END-->
+        <!--Pnppspv0-START-->
+        <Menu name="Pnppspv0Menu" title="pnppspv0List.title" page="/pnppspv0s.html"/>
+        <!--Pnppspv0-END-->
+        <!--Pnppop10-START-->
+        <Menu name="Pnppop10Menu" title="pnppop10List.title" page="/pnppop10s.html"/>
+        <!--Pnppop10-END-->
+        <!--Pnppop00-START-->
+        <Menu name="Pnppop00Menu" title="pnppop00List.title" page="/pnppop00s.html"/>
+        <!--Pnppop00-END-->
+        <!--Pnpnara0-START-->
+        <Menu name="Pnpnara0Menu" title="pnpnara0List.title" page="/pnpnara0s.html"/>
+        <!--Pnpnara0-END-->
+        <!--Ktgi-START-->
+        <Menu name="KtgiMenu" title="ktgiList.title" page="/ktgis.html"/>
+        <!--Ktgi-END-->
+        <!--Sd1pdbl0-START-->
+        <Menu name="Sd1pdbl0Menu" title="sd1pdbl0List.title" page="/sd1pdbl0s.html"/>
+        <!--Sd1pdbl0-END-->
+        <!--Sd1pdgl0-START-->
+        <Menu name="Sd1pdgl0Menu" title="sd1pdgl0List.title" page="/sd1pdgl0s.html"/>
+        <!--Sd1pdgl0-END-->
+        <!--Sd1pdoi0-START-->
+        <Menu name="Sd1pdoi0Menu" title="sd1pdoi0List.title" page="/sd1pdoi0s.html"/>
+        <!--Sd1pdoi0-END-->
+        <!--Sd1pdvb0-START-->
+        <Menu name="Sd1pdvb0Menu" title="sd1pdvb0List.title" page="/sd1pdvb0s.html"/>
+        <!--Sd1pdvb0-END-->
+        <!--Sd1perr0-START-->
+        <Menu name="Sd1perr0Menu" title="sd1perr0List.title" page="/sd1perr0s.html"/>
+        <!--Sd1perr0-END-->
+        <!--Sd1pkar0-START-->
+        <Menu name="Sd1pkar0Menu" title="sd1pkar0List.title" page="/sd1pkar0s.html"/>
+        <!--Sd1pkar0-END-->
+        <!--Sd1pkon0-START-->
+        <Menu name="Sd1pkon0Menu" title="sd1pkon0List.title" page="/sd1pkon0s.html"/>
+        <!--Sd1pkon0-END-->
+        <!--Sd1pkte0-START-->
+        <Menu name="Sd1pkte0Menu" title="sd1pkte0List.title" page="/sd1pkte0s.html"/>
+        <!--Sd1pkte0-END-->
+        <!--Isocnt-START-->
+        <Menu name="IsocntMenu" title="isocntList.title" page="/isocnts.html"/>
+        <!--Isocnt-END-->
+        <!--Sd1vkte0-START-->
+        <Menu name="Sd1vkte0Menu" title="sd1vkte0List.title" page="/sd1vkte0s.html"/>
+        <!--Sd1vkte0-END-->
+        <!--Sd1ppri0-START-->
+        <Menu name="Sd1ppri0Menu" title="sd1ppri0List.title" page="/sd1ppri0s.html"/>
+        <!--Sd1ppri0-END-->
+        <!--Sd1povp0-START-->
+        <Menu name="Sd1povp0Menu" title="sd1povp0List.title" page="/sd1povp0s.html"/>
+        <!--Sd1povp0-END-->
+        <!--Sd1pogd0-START-->
+        <Menu name="Sd1pogd0Menu" title="sd1pogd0List.title" page="/sd1pogd0s.html"/>
+        <!--Sd1pogd0-END-->
+        <!--Sd1povs0-START-->
+        <Menu name="Sd1povs0Menu" title="sd1povs0List.title" page="/sd1povs0s.html"/>
+        <!--Sd1povs0-END-->
+        <!--Sd1pmar0-START-->
+        <Menu name="Sd1pmar0Menu" title="sd1pmar0List.title" page="/sd1pmar0s.html"/>
+        <!--Sd1pmar0-END-->
+        <!--Sd1pktf0-START-->
+        <Menu name="Sd1pktf0Menu" title="sd1pktf0List.title" page="/sd1pktf0s.html"/>
+        <!--Sd1pktf0-END-->
+        <!--Sd1povd0-START-->
+        <Menu name="Sd1povd0Menu" title="sd1povd0List.title" page="/sd1povd0s.html"/>
+        <!--Sd1povd0-END-->
+        <!--Sd1pogz0-START-->
+        <Menu name="Sd1pogz0Menu" title="sd1pogz0List.title" page="/sd1pogz0s.html"/>
+        <!--Sd1pogz0-END-->
+        <!--Sd1pskl0-START-->
+        <Menu name="Sd1pskl0Menu" title="sd1pskl0List.title" page="/sd1pskl0s.html"/>
+        <!--Sd1pskl0-END-->
+        <!--Sp1pinc0-START-->
+        <Menu name="Sp1pinc0Menu" title="sp1pinc0List.title" page="/sp1pinc0s.html"/>
+        <!--Sp1pinc0-END-->
+        <!--Sd1vktf0-START-->
+        <Menu name="Sd1vktf0Menu" title="sd1vktf0List.title" page="/sd1vktf0s.html"/>
+        <!--Sd1vktf0-END-->
+        <!--Sdismsg-START-->
+        <Menu name="SdismsgMenu" title="sdismsgList.title" page="/sdismsgs.html"/>
+        <!--Sdismsg-END-->
+        <!--Sp1ppre0-START-->
+        <Menu name="Sp1ppre0Menu" title="sp1ppre0List.title" page="/sp1ppre0s.html"/>
+        <!--Sp1ppre0-END-->
+        <!--Tipprem-START-->
+        <Menu name="TippremMenu" title="tippremList.title" page="/tipprems.html"/>
+        <!--Tipprem-END-->
+        <!--Sp1pcim0-START-->
+        <Menu name="Sp1pcim0Menu" title="sp1pcim0List.title" page="/sp1pcim0s.html"/>
+        <!--Sp1pcim0-END-->
+        <!--Sp1mapt0-START-->
+        <Menu name="Sp1mapt0Menu" title="sp1mapt0List.title" page="/sp1mapt0s.html"/>
+        <!--Sp1mapt0-END-->
+        <!--Sp1pvag0-START-->
+        <Menu name="Sp1pvag0Menu" title="sp1pvag0List.title" page="/sp1pvag0s.html"/>
+        <!--Sp1pvag0-END-->
+        <!--Sp1psic0-START-->
+        <Menu name="Sp1psic0Menu" title="sp1psic0List.title" page="/sp1psic0s.html"/>
+        <!--Sp1psic0-END-->
+        <!--Sp1pktf0-START-->
+        <Menu name="Sp1pktf0Menu" title="sp1pktf0List.title" page="/sp1pktf0s.html"/>
+        <!--Sp1pktf0-END-->
+        <!--Sp1pcmr0-START-->
+        <Menu name="Sp1pcmr0Menu" title="sp1pcmr0List.title" page="/sp1pcmr0s.html"/>
+        <!--Sp1pcmr0-END-->
+        <!--Sifrantopis-START-->
+        <Menu name="SifrantopisMenu" title="sifrantopisList.title" page="/sifrantopiss.html"/>
+        <!--Sifrantopis-END-->
+        <!--Pnppmer0-START-->
+        <Menu name="Pnppmer0Menu" title="pnppmer0List.title" page="/pnppmer0s.html"/>
+        <!--Pnppmer0-END-->
+        <!--Lukstor-START-->
+        <Menu name="LukstorMenu" title="lukstorList.title" page="/lukstors.html"/>
+        <!--Lukstor-END-->
+        <!--Imco-START-->
+        <Menu name="ImcoMenu" title="imcoList.title" page="/imcos.html"/>
+        <!--Imco-END-->
+        <!--TemplatePdfParametri-START-->
+        <Menu name="TemplatePdfParametriMenu" title="templatePdfParametriList.title" page="/templatePdfParametris.html"/>
+        <!--TemplatePdfParametri-END-->
+        <!--Valute-START-->
+        <Menu name="ValuteMenu" title="valuteList.title" page="/valutes.html"/>
+        <!--Valute-END-->
+        <!--UsersPrivilegije-START-->
+        <Menu name="UsersPrivilegijeMenu" title="usersPrivilegijeList.title" page="/usersPrivilegijes.html"/>
+        <!--UsersPrivilegije-END-->
+        <!--TemplateUpload-START-->
+        <Menu name="TemplateUploadMenu" title="templateUploadList.title" page="/templateUploads.html"/>
+        <!--TemplateUpload-END-->
+        <!--TemplateTag-START-->
+        <Menu name="TemplateTagMenu" title="templateTagList.title" page="/templateTags.html"/>
+        <!--TemplateTag-END-->
+        <!--Tipdispozic-START-->
+        <Menu name="TipdispozicMenu" title="tipdispozicList.title" page="/tipdispozpopultrade.html"/>
+        <!--Tipdispozic-END-->
+        <!--Organizacijskeenote-START-->
+        <Menu name="OrganizacijskeenoteMenu" title="organizacijskeenoteList.title" page="/organizacijskeenotes.html"/>
+        <!--Organizacijskeenote-END-->
+        <!--Pnppstv0-START-->
+        <Menu name="Pnppstv0Menu" title="pnppstv0List.title" page="/pnppstv0s.html"/>
+        <!--Pnppstv0-END-->
+        <!--Pnppnrs0-START-->
+        <Menu name="Pnppnrs0Menu" title="pnppnrs0List.title" page="/pnppnrs0s.html"/>
+        <!--Pnppnrs0-END-->
+        <!--Sd1pdoi1-START-->
+        <Menu name="Sd1pdoi1Menu" title="sd1pdoi1List.title" page="/sd1pdoi1s.html"/>
+        <!--Sd1pdoi1-END-->
+        <!--Pnpnara1-START-->
+        <Menu name="Pnpnara1Menu" title="pnpnara1List.title" page="/pnpnara1s.html"/>
+        <!--Pnpnara1-END-->
+    </Menus>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</MenuConfig>

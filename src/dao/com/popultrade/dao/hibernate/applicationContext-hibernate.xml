@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean id="sessionFactory"  class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+<property name="dataSource">
+<ref bean="dataSource"/>
+</property>
+<property name="hibernateProperties">
+<props>
+<prop key="hibernate.dialect">@HIBERNATE-DIALECT@</prop>
+<!-- Turn batching off for better error messages under PostgreSQL -->
+<prop key="hibernate.jdbc.batch_size">0</prop> 
+<prop key="hibernate.show_sql">true</prop> 
+<prop key="hibernate.use_outer_join">true</prop> 
+<prop key="hibernate.cglib.use_reflection_optimizer">false</prop> 
+</props>
+</property>
+<property name="annotatedClasses">
+<list>
+<value>com.popultrade.model.Codes</value>
+<value>com.popultrade.model.FrameSize</value>
+<value>com.popultrade.model.Jeziki</value>
+<value>com.popultrade.model.Obvestila</value>
+<value>com.popultrade.model.Prevodi</value>
+<value>com.popultrade.model.TemplateAttribute</value>
+<value>com.popultrade.model.TemplateClass</value>
+<value>com.popultrade.model.TemplateClassClass</value>
+<value>com.popultrade.model.TemplateClassClass_vrednosti</value>
+<value>com.popultrade.model.TemplateClassPP</value>
+<value>com.popultrade.model.TemplateConversion</value>
+<value>com.popultrade.model.TemplateConversions</value>
+<value>com.popultrade.model.TemplateCssDefault</value>
+<value>com.popultrade.model.TemplateCustomClass</value>
+<value>com.popultrade.model.TemplateDD</value>
+<value>com.popultrade.model.TemplateDDPogoji</value>
+<value>com.popultrade.model.TemplateFrame</value>
+<value>com.popultrade.model.TemplateFunkcija</value>
+<value>com.popultrade.model.TemplateFunkcijaStart</value>
+<value>com.popultrade.model.TemplateGumbi</value>
+<value>com.popultrade.model.TemplateGumbiParametri</value>
+<value>com.popultrade.model.TemplateHead</value>
+<value>com.popultrade.model.TemplateHeadReset</value>
+<value>com.popultrade.model.TemplateJsDb</value>
+<value>com.popultrade.model.TemplateList</value>
+<value>com.popultrade.model.TemplateMailList</value>
+<value>com.popultrade.model.TemplateMenu</value>
+<value>com.popultrade.model.TemplateMenun</value>
+<value>com.popultrade.model.TemplateObjektiBaza</value>
+<value>com.popultrade.model.TemplatePages</value>
+<value>com.popultrade.model.TemplatePdfParametri</value>
+<value>com.popultrade.model.TemplatePP</value>
+<value>com.popultrade.model.TemplateRepository</value>
+<value>com.popultrade.model.TemplateSearch</value>
+<value>com.popultrade.model.TemplateTables</value>
+<value>com.popultrade.model.TemplateTablesCol</value>
+<value>com.popultrade.model.TemplateTablesGen</value>
+<value>com.popultrade.model.TemplateTag</value>
+<value>com.popultrade.model.TemplateUi</value>
+<value>com.popultrade.model.TemplateUiDodatno</value>
+<value>com.popultrade.model.TemplateUpload</value>
+<value>com.popultrade.model.TemplateView</value>
+<value>com.popultrade.model.TemplateXml</value>
+<value>com.popultrade.model.TemplateXmlapp</value>
+<value>com.popultrade.model.TemplateXmlelements</value>
+<value>com.popultrade.model.Uploads</value>
+<value>com.popultrade.model.Users</value>
+<value>com.popultrade.model.UsersColumns</value>
+<value>com.popultrade.model.UsersParametri</value>
+<value>com.popultrade.model.UsersPrivilegije</value>
+<value>com.popultrade.model.Wse_prijave</value>
+
+
+
+<value>com.popultrade.model.Wse_sporocila</value>
+
+
+
+
+
+</list>
+</property>
+</bean>
+<bean id="codesDAO" class="com.popultrade.dao.hibernate.CodesDAOHibernate" autowire="byName"/>
+<bean id="frameSizeDAO" class="com.popultrade.dao.hibernate.FrameSizeDAOHibernate" autowire="byName"/>
+<bean id="jezikiDAO" class="com.popultrade.dao.hibernate.JezikiDAOHibernate" autowire="byName"/>
+<bean id="obvestilaDAO" class="com.popultrade.dao.hibernate.ObvestilaDAOHibernate" autowire="byName"/>
+<bean id="prevodiDAO" class="com.popultrade.dao.hibernate.PrevodiDAOHibernate" autowire="byName"/>
+<bean id="templateAttributeDAO" class="com.popultrade.dao.hibernate.TemplateAttributeDAOHibernate" autowire="byName"/>
+<bean id="templateClassDAO" class="com.popultrade.dao.hibernate.TemplateClassDAOHibernate" autowire="byName"/>
+<bean id="templateClassClassDAO" class="com.popultrade.dao.hibernate.TemplateClassClassDAOHibernate" autowire="byName"/>
+<bean id="templateClassClass_vrednostiDAO" class="com.popultrade.dao.hibernate.TemplateClassClass_vrednostiDAOHibernate" autowire="byName"/>
+<bean id="templateClassPPDAO" class="com.popultrade.dao.hibernate.TemplateClassPPDAOHibernate" autowire="byName"/>
+<bean id="templateConversionDAO" class="com.popultrade.dao.hibernate.TemplateConversionDAOHibernate" autowire="byName"/>
+<bean id="templateConversionsDAO" class="com.popultrade.dao.hibernate.TemplateConversionsDAOHibernate" autowire="byName"/>
+<bean id="templateCssDefaultDAO" class="com.popultrade.dao.hibernate.TemplateCssDefaultDAOHibernate" autowire="byName"/>
+<bean id="templateCustomClassDAO" class="com.popultrade.dao.hibernate.TemplateCustomClassDAOHibernate" autowire="byName"/>
+<bean id="templateDDDAO" class="com.popultrade.dao.hibernate.TemplateDDDAOHibernate" autowire="byName"/>
+<bean id="templateDDPogojiDAO" class="com.popultrade.dao.hibernate.TemplateDDPogojiDAOHibernate" autowire="byName"/>
+<bean id="templateFrameDAO" class="com.popultrade.dao.hibernate.TemplateFrameDAOHibernate" autowire="byName"/>
+<bean id="templateFunkcijaDAO" class="com.popultrade.dao.hibernate.TemplateFunkcijaDAOHibernate" autowire="byName"/>
+<bean id="templateFunkcijaStartDAO" class="com.popultrade.dao.hibernate.TemplateFunkcijaStartDAOHibernate" autowire="byName"/>
+<bean id="templateGumbiDAO" class="com.popultrade.dao.hibernate.TemplateGumbiDAOHibernate" autowire="byName"/>
+<bean id="templateGumbiParametriDAO" class="com.popultrade.dao.hibernate.TemplateGumbiParametriDAOHibernate" autowire="byName"/>
+<bean id="templateHeadDAO" class="com.popultrade.dao.hibernate.TemplateHeadDAOHibernate" autowire="byName"/>
+<bean id="templateHeadResetDAO" class="com.popultrade.dao.hibernate.TemplateHeadResetDAOHibernate" autowire="byName"/>
+<bean id="templateJsDbDAO" class="com.popultrade.dao.hibernate.TemplateJsDbDAOHibernate" autowire="byName"/>
+<bean id="templateListDAO" class="com.popultrade.dao.hibernate.TemplateListDAOHibernate" autowire="byName"/>
+<bean id="templateMailListDAO" class="com.popultrade.dao.hibernate.TemplateMailListDAOHibernate" autowire="byName"/>
+<bean id="templateMenuDAO" class="com.popultrade.dao.hibernate.TemplateMenuDAOHibernate" autowire="byName"/>
+<bean id="templateMenunDAO" class="com.popultrade.dao.hibernate.TemplateMenunDAOHibernate" autowire="byName"/>
+<bean id="templateObjektiBazaDAO" class="com.popultrade.dao.hibernate.TemplateObjektiBazaDAOHibernate" autowire="byName"/>
+<bean id="templatePagesDAO" class="com.popultrade.dao.hibernate.TemplatePagesDAOHibernate" autowire="byName"/>
+<bean id="templatePdfParametriDAO" class="com.popultrade.dao.hibernate.TemplatePdfParametriDAOHibernate" autowire="byName"/>
+<bean id="templatePPDAO" class="com.popultrade.dao.hibernate.TemplatePPDAOHibernate" autowire="byName"/>
+<bean id="templateRepositoryDAO" class="com.popultrade.dao.hibernate.TemplateRepositoryDAOHibernate" autowire="byName"/>
+<bean id="templateSearchDAO" class="com.popultrade.dao.hibernate.TemplateSearchDAOHibernate" autowire="byName"/>
+<bean id="templateTablesDAO" class="com.popultrade.dao.hibernate.TemplateTablesDAOHibernate" autowire="byName"/>
+<bean id="templateTablesColDAO" class="com.popultrade.dao.hibernate.TemplateTablesColDAOHibernate" autowire="byName"/>
+<bean id="templateTablesGenDAO" class="com.popultrade.dao.hibernate.TemplateTablesGenDAOHibernate" autowire="byName"/>
+<bean id="templateTagDAO" class="com.popultrade.dao.hibernate.TemplateTagDAOHibernate" autowire="byName"/>
+<bean id="templateUiDAO" class="com.popultrade.dao.hibernate.TemplateUiDAOHibernate" autowire="byName"/>
+<bean id="templateUiDodatnoDAO" class="com.popultrade.dao.hibernate.TemplateUiDodatnoDAOHibernate" autowire="byName"/>
+<bean id="templateUploadDAO" class="com.popultrade.dao.hibernate.TemplateUploadDAOHibernate" autowire="byName"/>
+<bean id="templateViewDAO" class="com.popultrade.dao.hibernate.TemplateViewDAOHibernate" autowire="byName"/>
+<bean id="templateXmlDAO" class="com.popultrade.dao.hibernate.TemplateXmlDAOHibernate" autowire="byName"/>
+<bean id="templateXmlappDAO" class="com.popultrade.dao.hibernate.TemplateXmlappDAOHibernate" autowire="byName"/>
+<bean id="templateXmlelementsDAO" class="com.popultrade.dao.hibernate.TemplateXmlelementsDAOHibernate" autowire="byName"/>
+<bean id="uploadsDAO" class="com.popultrade.dao.hibernate.UploadsDAOHibernate" autowire="byName"/>
+<bean id="usersDAO" class="com.popultrade.dao.hibernate.UsersDAOHibernate" autowire="byName"/>
+<bean id="usersColumnsDAO" class="com.popultrade.dao.hibernate.UsersColumnsDAOHibernate" autowire="byName"/>
+<bean id="usersParametriDAO" class="com.popultrade.dao.hibernate.UsersParametriDAOHibernate" autowire="byName"/>
+<bean id="usersPrivilegijeDAO" class="com.popultrade.dao.hibernate.UsersPrivilegijeDAOHibernate" autowire="byName"/>
+<bean id="wse_prijaveDAO" class="com.popultrade.dao.hibernate.Wse_prijaveDAOHibernate" autowire="byName"/>
+
+<bean id="wse_sporocilaDAO" class="com.popultrade.dao.hibernate.Wse_sporocilaDAOHibernate" autowire="byName"/>
+
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+

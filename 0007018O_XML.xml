@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cc3:CC315A xmlns:cc3="http://ces.gov.mt/popultrade/schemas/CC315A">
+  <cc3:MesSenMES3>HAPAG-LLOYD</cc3:MesSenMES3>
+  <cc3:MesRecMES6>HAPAGL058</cc3:MesRecMES6>
+  <cc3:DatOfPreMES9>110324</cc3:DatOfPreMES9>
+  <cc3:TimOfPreMES10>0835</cc3:TimOfPreMES10>
+  <cc3:TesIndMES18>0</cc3:TesIndMES18>
+  <cc3:MesIdeMES19>131118049</cc3:MesIdeMES19>
+  <cc3:MesTypMES20>CC315A</cc3:MesTypMES20>
+  <cc3:HEAHEA>
+    <cc3:RefNumHEA4>DE2742004131118049</cc3:RefNumHEA4>
+    <cc3:TraModAtBorHEA76>1</cc3:TraModAtBorHEA76>
+    <cc3:IdeOfMeaOfTraCroHEA85>9151864</cc3:IdeOfMeaOfTraCroHEA85>
+    <cc3:TotNumOfIteHEA305>2</cc3:TotNumOfIteHEA305>
+    <cc3:TotNumOfPacHEA306>20</cc3:TotNumOfPacHEA306>
+    <cc3:TotGroMasHEA307>1500.0</cc3:TotGroMasHEA307>
+    <cc3:DecPlaHEA394>IT GENOVA</cc3:DecPlaHEA394>
+    <cc3:TraChaMetOfPayHEA1>Y</cc3:TraChaMetOfPayHEA1>
+    <cc3:ComRefNumHEA>483956;MTMAR;O</cc3:ComRefNumHEA>
+    <cc3:ConRefNumHEA>013E</cc3:ConRefNumHEA>
+    <cc3:PlaLoaGOOITE334>MT MARSAXLOKK</cc3:PlaLoaGOOITE334>
+    <cc3:DecDatTimHEA114>201103240835</cc3:DecDatTimHEA114>
+  </cc3:HEAHEA>
+  <cc3:GOOITEGDS>
+    <cc3:GooDesGDS23> LASER SAILING DINGHY COMPLETE HULL, SAIL, MASTS, FOILS, COVERS, ROPE BLOCKS CAN NO: AAYGN7XX4</cc3:GooDesGDS23>
+    <cc3:GroMasGDS46>1500.0</cc3:GroMasGDS46>
+    <cc3:GroVolume>20.0</cc3:GroVolume>
+    <cc3:PlaLoaGOOITE333>MT MARSAXLOKK</cc3:PlaLoaGOOITE333>
+    <cc3:PlaUnlGOOITE333>HR RIJEKA</cc3:PlaUnlGOOITE333>
+    <cc3:DocNumGDS5>11MT04023000275633;0001</cc3:DocNumGDS5>
+    <cc3:PRODOCDC2>
+      <cc3:DocTypDC21>N705</cc3:DocTypDC21>
+      <cc3:DocRefDC23>HLCUSYD110120667</cc3:DocRefDC23>
+    </cc3:PRODOCDC2>
+    <cc3:TRACONCO2>
+      <cc3:NamCO27>THE MERCANTILE SHIPPG. &amp; COATING CO</cc3:NamCO27>
+      <cc3:StrAndNumCO222>143 ST.CHRISTOPHER STREET</cc3:StrAndNumCO222>
+      <cc3:PosCodCO223>VLT02</cc3:PosCodCO223>
+      <cc3:CitCO224>VALLETTA</cc3:CitCO224>
+      <cc3:CouCO225>MT</cc3:CouCO225>
+    </cc3:TRACONCO2>
+    <cc3:COMCODGODITM>
+      <cc3:ComNomCMD1>89039100</cc3:ComNomCMD1>
+    </cc3:COMCODGODITM>
+    <cc3:TRACONCE2>
+      <cc3:NamCE27>JADROAGENT LTD.</cc3:NamCE27>
+      <cc3:StrAndNumCE222>TRG IVANA KOBLERA 2</cc3:StrAndNumCE222>
+      <cc3:PosCodCE223>99999</cc3:PosCodCE223>
+      <cc3:CitCE224>RIJEKA</cc3:CitCE224>
+      <cc3:CouCE225>HR</cc3:CouCE225>
+    </cc3:TRACONCE2>
+    <cc3:CONNR2>
+      <cc3:ConNumNR21>TRLU  3387014</cc3:ConNumNR21>
+      <cc3:ConSize>22G1</cc3:ConSize>
+      <cc3:ConSeal>AHL1907334</cc3:ConSeal>
+    </cc3:CONNR2>
+    <cc3:PACGS2>
+      <cc3:KinOfPacGS23>PK</cc3:KinOfPacGS23>
+      <cc3:NumOfPacGS24>10</cc3:NumOfPacGS24>
+      <cc3:MarNumOfPacGSL21>NO MARKS</cc3:MarNumOfPacGSL21>
+    </cc3:PACGS2>
+  </cc3:GOOITEGDS>
+  <cc3:GOOITEGDS>
+    <cc3:GooDesGDS23> MACHINERY SPARE PARTS 10 TONNE RECOILER, FINISH U WRAP COATER, BELT WRAPPER, S WRAP PRIME COATER, CHEMICAL COATER AND TANK CAN AAYG6THM3</cc3:GooDesGDS23>
+    <cc3:GroMasGDS46>9115.0</cc3:GroMasGDS46>
+    <cc3:GroVolume>13.969</cc3:GroVolume>
+    <cc3:PlaLoaGOOITE333>MT MARSAXLOKK</cc3:PlaLoaGOOITE333>
+    <cc3:PlaUnlGOOITE333>SI KOPER</cc3:PlaUnlGOOITE333>
+    <cc3:DocNumGDS5>11MT04023000275625;0001</cc3:DocNumGDS5>
+    <cc3:PRODOCDC2>
+      <cc3:DocTypDC21>N705</cc3:DocTypDC21>
+      <cc3:DocRefDC23>HLCUSYD110112930</cc3:DocRefDC23>
+    </cc3:PRODOCDC2>
+    <cc3:TRACONCO2>
+      <cc3:NamCO27>THE MERCANTILE SHIPPG. &amp; COATING CO</cc3:NamCO27>
+      <cc3:StrAndNumCO222>143 ST.CHRISTOPHER STREET</cc3:StrAndNumCO222>
+      <cc3:PosCodCO223>VLT02</cc3:PosCodCO223>
+      <cc3:CitCO224>VALLETTA</cc3:CitCO224>
+      <cc3:CouCO225>MT</cc3:CouCO225>
+    </cc3:TRACONCO2>
+    <cc3:COMCODGODITM>
+      <cc3:ComNomCMD1>84798900</cc3:ComNomCMD1>
+    </cc3:COMCODGODITM>
+    <cc3:TRACONCE2>
+      <cc3:NamCE27>JADROAGENT D.O.O. LJUBLJANA</cc3:NamCE27>
+      <cc3:StrAndNumCE222>CESTA DVEH CESARJEV 403</cc3:StrAndNumCE222>
+      <cc3:PosCodCE223>99999</cc3:PosCodCE223>
+      <cc3:CitCE224>LJUBLJANA</cc3:CitCE224>
+      <cc3:CouCE225>SI</cc3:CouCE225>
+    </cc3:TRACONCE2>
+    <cc3:CONNR2>
+      <cc3:ConNumNR21>FCIU  2500772</cc3:ConNumNR21>
+      <cc3:ConSize>22G0</cc3:ConSize>
+      <cc3:ConSeal>.</cc3:ConSeal>
+    </cc3:CONNR2>
+    <cc3:PACGS2>
+      <cc3:KinOfPacGS23>BX</cc3:KinOfPacGS23>
+      <cc3:NumOfPacGS24>10</cc3:NumOfPacGS24>
+      <cc3:MarNumOfPacGSL21>NO MARKS</cc3:MarNumOfPacGSL21>
+    </cc3:PACGS2>
+  </cc3:GOOITEGDS>
+  <cc3:ITI>
+    <cc3:CouOfRouCodITI1>AU</cc3:CouOfRouCodITI1>
+  </cc3:ITI>
+  <cc3:ITI>
+    <cc3:CouOfRouCodITI1>HR</cc3:CouOfRouCodITI1>
+  </cc3:ITI>
+  <cc3:PERLODSUMDEC>
+    <cc3:NamPLD1>HAPAG-LLOYD</cc3:NamPLD1>
+    <cc3:TINPLD1>DE2742004</cc3:TINPLD1>
+  </cc3:PERLODSUMDEC>
+</cc3:CC315A>

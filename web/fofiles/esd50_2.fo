@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xsl:stylesheet version="1.0" 
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<xsl:template match="/">
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+
+<fo:layout-master-set>
+<fo:simple-page-master master-name="only"
+page-height="29.7cm" 
+page-width="21cm" 
+margin-top="5mm" 
+margin-bottom="1cm" 
+margin-left="1cm" 
+margin-right="1cm" 
+>
+
+<fo:region-body margin-top="2.5cm" margin-bottom="2cm"/>
+<fo:region-before extent="4cm"/>
+<fo:region-after extent="1.4cm" />
+
+</fo:simple-page-master>
+</fo:layout-master-set>
+
+<fo:page-sequence master-reference="only">
+
+<fo:static-content flow-name="xsl-region-before">
+
+					<!--  TUS GLAVA  -->
+					<fo:table border-width="0pt" border-style="solid" border-color="black" padding="1pt" cellspacing="0pt">
+						
+						<fo:table-column column-width="190mm"/>
+				
+						<fo:table-body>
+							<fo:table-row>
+								<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+									<fo:block font-size="12pt" line-height="12pt" font-family="verdana" text-align="center" font-weight="bold">
+								popultrade 344 PREDLOZITEV
+				
+</fo:block>
+								</fo:table-cell>								
+								
+							</fo:table-row>
+											<fo:table-row>
+								<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+									<fo:block font-size="8pt" line-height="12pt" font-family="verdana" text-align="center">
+									Naslednji urad
+				
+</fo:block>
+								</fo:table-cell>								
+								
+							</fo:table-row>
+						</fo:table-body>
+					</fo:table>
+
+
+</fo:static-content>
+
+<fo:static-content flow-name="xsl-region-after">
+
+
+
+		<fo:table border-width="0pt" border-style="solid" border-color="black" padding="1pt" cellspacing="0pt" >
+		
+		<fo:table-column column-width="77mm"/>
+		<fo:table-column column-width="40mm"/>
+		<fo:table-column column-width="77mm"/>
+		
+			<fo:table-body>
+			<fo:table-row>
+				<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+				<fo:block font-size="7pt" line-height="7pt"
+				font-family="verdana"> <xsl:value-of select="dataa/strann/opis"/> <fo:page-number/></fo:block>
+				</fo:table-cell>
+							<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+				<fo:block font-size="7pt" line-height="7pt"
+				font-family="verdana"><xsl:value-of select="dataa/strann/verzija"/></fo:block>
+				</fo:table-cell>
+				
+				
+				
+				<fo:table-cell border-width="1pt" border-style="solid" border-color="white"  text-align="right">
+					<fo:block font-size="7pt" line-height="7pt"
+					font-family="verdana">
+					<xsl:value-of select="dataa/datumiz/opis"/>
+					 <xsl:value-of select="dataa/datumiz/vrednost"/>
+					  <xsl:value-of select="dataa/datumura/opis"/>
+					   <xsl:value-of select="dataa/datumura/vrednost"/>
+					   </fo:block>
+				</fo:table-cell>
+				</fo:table-row>
+			</fo:table-body>
+		
+		</fo:table>
+		<fo:block line-height="7pt"><fo:leader leader-pattern="rule" leader-length="188mm" rule-thickness="0.5pt"/></fo:block>
+
+			<fo:table border-width="0pt" border-style="solid" border-color="black" padding="1pt" cellspacing="0pt" >
+		
+		<fo:table-column column-width="77mm"/>
+		<fo:table-column column-width="40mm"/>
+		<fo:table-column column-width="74mm"/>
+				<fo:table-body>
+			<fo:table-row>
+				<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+				<fo:block font-size="7pt" line-height="7pt"
+				font-family="verdana">www.atnet.si</fo:block>
+				</fo:table-cell>
+							<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+				<fo:block font-size="7pt" line-height="7pt"
+				font-family="verdana">© ATBIZNET</fo:block>
+				</fo:table-cell>
+				
+				
+				
+				<fo:table-cell border-width="1pt" border-style="solid" border-color="white"  text-align="right">
+					<fo:block font-size="7pt" line-height="7pt"
+					font-family="verdana">
+		ap@atnet.si
+					   </fo:block>
+				</fo:table-cell>
+				</fo:table-row>
+			</fo:table-body>
+		
+		</fo:table>
+
+
+</fo:static-content>
+
+<fo:flow flow-name="xsl-region-body">
+<xsl:apply-templates select="//naslov"/>
+
+<!--MRN Glavni-->
+<fo:table border-width="0pt" border-style="solid" padding="2pt" cellspacing="2pt" >
+<fo:table-column column-width="38mm"/>
+<fo:table-column column-width="65mm"/>
+<fo:table-column column-width="93mm"/>
+<fo:table-body>
+<fo:table-row>
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="left"
+font-weight="bold"
+>
+MRN:
+</fo:block>
+</fo:table-cell>
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="left"
+font-weight="bold"
+>
+<xsl:value-of select="dataa/mrng/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block>
+
+  <fo:instream-foreign-object>
+    <barcode:barcode
+          xmlns:barcode="http://barcode4j.krysalis.org/ns"
+          message="{dataa/mrng/opis}" >
+      <barcode:code128>
+     <!--   <barcode:height>8mm</barcode:height>-->
+      </barcode:code128>
+    </barcode:barcode>
+  </fo:instream-foreign-object>
+</fo:block>
+
+
+
+
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+
+
+
+<xsl:apply-templates select="//header"/>
+
+<xsl:apply-templates select="//mrnji"/>
+
+
+
+
+<!--<xsl:apply-templates select="dataa"/>-->
+
+
+
+<fo:table border-width="0pt" border-style="solid" padding="2pt" cellspacing="2pt" >
+<fo:table-column column-width="38mm"/>
+<fo:table-column column-width="65mm"/>
+<fo:table-column column-width="38mm"/>
+<fo:table-column column-width="55mm"/>
+
+<fo:table-body>
+
+<fo:table-row>
+
+
+
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="left"
+font-weight="bold"
+>
+<xsl:value-of select="dataa/skupaj_posiljke/opis"/>
+</fo:block>
+</fo:table-cell>
+
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="left"
+
+>
+<xsl:value-of select="dataa/skupaj_posiljke/vrednost"/>
+</fo:block>
+</fo:table-cell>
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="left"
+font-weight="bold"
+>
+<xsl:value-of select="dataa/skupaj_vrstice/opis"/>
+</fo:block>
+</fo:table-cell>
+
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="left"
+
+>
+<xsl:value-of select="dataa/skupaj_vrstice/vrednost"/>
+</fo:block>
+</fo:table-cell>
+
+
+</fo:table-row>
+
+
+
+
+
+<fo:table-row>
+
+
+
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white" >
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="left"
+font-weight="bold"
+>
+<xsl:value-of select="dataa/st_dispozicije/opis"/>
+</fo:block>
+</fo:table-cell>
+
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white" number-columns-spanned="3">
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="left"
+
+>
+<xsl:value-of select="dataa/st_dispozicije/vrednost"/>
+</fo:block>
+</fo:table-cell>
+
+
+</fo:table-row>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</fo:table-body>
+</fo:table>
+
+
+
+
+<!-- tabela -->
+<!--Presledek-->
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="justify"
+font-weight="bold">
+&#160;
+
+</fo:block>
+
+<xsl:apply-templates select="//stolpec-vrednosti"/>
+
+
+
+
+
+
+
+
+
+
+<xsl:apply-templates select="//footer"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</fo:flow>
+
+
+
+</fo:page-sequence>
+</fo:root>
+</xsl:template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--xsl-->
+
+
+
+
+
+
+
+<xsl:template match="naslov">
+<fo:block font-size="12pt"
+font-family="verdana"
+line-height="14pt"
+space-after.optimum="10pt"
+
+text-align="center"
+padding-top="1pt"
+font-weight="bold">
+<xsl:value-of select="."/>
+</fo:block>
+</xsl:template>
+
+
+
+
+
+
+
+<!--HEADER-->
+
+<xsl:template match="header">
+
+<xsl:param name="amo" select="//header/par"/>
+
+<fo:table border-width="0pt" border-style="solid" padding="2pt" cellspacing="2pt" >
+<fo:table-column column-width="38mm"/>
+<fo:table-column column-width="65mm"/>
+<fo:table-column column-width="38mm"/>
+<fo:table-column column-width="55mm"/>
+
+<fo:table-body>
+<xsl:for-each select="$amo">
+<fo:table-row>
+
+
+
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="left"
+font-weight="bold"
+>
+<xsl:value-of select="a1"/>
+</fo:block>
+</fo:table-cell>
+
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="left"
+
+>
+<xsl:value-of select="a2"/>
+</fo:block>
+</fo:table-cell>
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="left"
+font-weight="bold"
+>
+<xsl:value-of select="a3"/>
+</fo:block>
+</fo:table-cell>
+
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="left"
+
+>
+<xsl:value-of select="a4"/>
+</fo:block>
+</fo:table-cell>
+
+
+</fo:table-row>
+
+</xsl:for-each>
+</fo:table-body>
+</fo:table>
+
+</xsl:template>
+
+
+
+
+<!--MRN-->
+
+<xsl:template match="mrnji">
+
+<xsl:param name="amo" select="//mrnji/mrn"/>
+
+<fo:table border-width="0pt" border-style="solid" padding="2pt" cellspacing="2pt" >
+<fo:table-column column-width="48mm"/>
+<fo:table-column column-width="142mm"/>
+
+<fo:table-body>
+<xsl:for-each select="$amo">
+<fo:table-row>
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" vertical-align="top" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" >
+<xsl:value-of select="."/>
+</fo:block>
+</fo:table-cell>
+
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+
+<fo:block>
+  <fo:instream-foreign-object>
+    <barcode:barcode
+          xmlns:barcode="http://barcode4j.krysalis.org/ns"
+          message="{.}" >
+      <barcode:code128>
+     <!--   <barcode:height>8mm</barcode:height>-->
+      </barcode:code128>
+    </barcode:barcode>
+  </fo:instream-foreign-object>
+</fo:block>
+
+</fo:table-cell>
+
+
+
+
+
+</fo:table-row>
+
+</xsl:for-each>
+</fo:table-body>
+</fo:table>
+
+</xsl:template>
+
+
+
+
+
+
+
+
+
+
+<!-- stolpci -->
+<xsl:template match="stolpci">
+
+<xsl:param name="aro" select="//stolpci/col"/>
+<fo:table-row>
+<xsl:for-each select="$aro">
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt"
+font-family="verdana"
+line-height="9pt"
+space-after.optimum="1pt"
+text-align="center"
+font-weight="bold"
+background-color="#E2E2E2">
+<xsl:value-of select="."/>
+</fo:block>
+</fo:table-cell>
+
+</xsl:for-each>
+
+</fo:table-row>
+
+</xsl:template>
+
+
+
+
+<!-- end stolpci -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- stolpci vrednost -->
+
+
+<xsl:template match="stolpec-vrednosti">
+
+<!-- posiljke -->
+<xsl:param name="arom" select="//stolpec-vrednosti/posiljka"/>
+<xsl:for-each select="$arom">
+
+
+
+<!-- za vsak esd10 nareim podatke iz glave-->
+<xsl:if test="head1/opis1!=''">
+<fo:table border-width="0pt" border-style="solid" padding="2pt" cellspacing="0pt" >
+<fo:table-column column-width="4mm"/>
+<fo:table-column column-width="188mm"/>
+<fo:table-column column-width="4mm"/>
+<fo:table-body>
+
+
+<fo:table-row>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white" >
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" >
+&#160;
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white"  >
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" >
+&#160;
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white"  >
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" >
+&#160;
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+
+<fo:table-row>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white" background-color="#E2E2E2" >
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" >
+&#160;
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white"  background-color="#E2E2E2">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" >
+&#160;
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white" background-color="#E2E2E2" >
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" >
+&#160;
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+<fo:table-row>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white"  background-color="#E2E2E2">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold">
+
+</fo:block>
+</fo:table-cell>
+
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white"   >
+
+<fo:table border-width="0pt" border-style="solid" padding="2pt" cellspacing="0pt" >
+<fo:table-column column-width="38mm"/>
+<fo:table-column column-width="62mm"/>
+<fo:table-column column-width="38mm"/>
+<fo:table-column column-width="55mm"/>
+
+<fo:table-body>
+
+
+<fo:table-row>
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="head1/opis1"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="head1/vred1"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:if test="head1/vred2!=''">
+<xsl:value-of select="head1/opis2"/>
+</xsl:if>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:if test="head1/vred2!=''">
+<xsl:value-of select="head1/vred2"/>
+</xsl:if>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+<fo:table-row>
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="head1/opis3"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="head1/vred3"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:if test="head1/vred4!=''">
+<xsl:value-of select="head1/opis2"/>
+</xsl:if>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:if test="head1/vred4!=''">
+<xsl:value-of select="head1/vred2"/>
+</xsl:if>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+</fo:table-body>
+</fo:table>
+
+</fo:table-cell>
+
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white"  background-color="#E2E2E2">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold">
+
+</fo:block>
+</fo:table-cell>
+
+</fo:table-row>
+
+<fo:table-row>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white" background-color="#E2E2E2" >
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" >
+&#160;
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white"  background-color="#E2E2E2">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" >
+&#160;
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white" background-color="#E2E2E2" >
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" >
+&#160;
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+</fo:table-body>
+</fo:table>
+
+
+</xsl:if>
+
+
+
+<fo:table border-width="0pt" border-style="solid" padding="2pt" cellspacing="0pt" >
+<fo:table-column column-width="4mm"/>
+<fo:table-column column-width="38mm"/>
+<fo:table-column column-width="57mm"/>
+<fo:table-column column-width="38mm"/>
+<fo:table-column column-width="55mm"/>
+<fo:table-column column-width="4mm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white" >
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" >
+&#160;
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white" number-columns-spanned="4">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" >
+&#160;
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white" >
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" >
+&#160;
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white" number-rows-spanned="13"  background-color="#E2E2E2">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold">
+
+</fo:block>
+</fo:table-cell>
+
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white" number-columns-spanned="4">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="right" background-color="#E2E2E2">
+<xsl:value-of select="zapst/opis"/> <xsl:value-of select="zapst/vred"/>
+</fo:block>
+</fo:table-cell>
+
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white" number-rows-spanned="13"  background-color="#E2E2E2">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold">
+
+</fo:block>
+</fo:table-cell>
+
+</fo:table-row>
+
+
+
+<fo:table-row>
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="zapst/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="zapst/vred"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="tipp/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="tipp/vred"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row>
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="bl/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="bl/vred"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="tovor/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="tovor/vred"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+
+
+<fo:table-row>
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="blago/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white" number-columns-spanned="3">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="blago/vred"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+
+
+<fo:table-row>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="bruto/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="bruto/vred"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="prost/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="prost/vred"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+
+
+
+
+<fo:table-row>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="razk/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white" number-columns-spanned="3">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="razk/vred"/>
+</fo:block>
+</fo:table-cell>
+
+</fo:table-row>
+
+
+
+
+<fo:table-row>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="razkv/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white" number-columns-spanned="3">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="razkv/vred"/>
+</fo:block>
+</fo:table-cell>
+
+</fo:table-row>
+
+
+
+
+
+
+<fo:table-row>
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="posil/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white" number-columns-spanned="3">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="posil/vred"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row>
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="preje/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white" number-columns-spanned="3">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="preje/vred"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row>
+
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="obve/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white" number-columns-spanned="3">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="obve/vred"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+
+
+<fo:table-row>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="imdg/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="imdg/vred"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="nhm/opis"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="nhm/vred"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row>
+
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white" number-columns-spanned="6">
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:apply-templates select="vrsticapl"/>
+<xsl:apply-templates select="vrstica"/>
+
+</fo:block>
+</fo:table-cell>
+
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell border-width="0pt" border-style="solid" border-color="white" background-color="#E2E2E2" number-columns-spanned="5" >
+<fo:block font-size="8pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+
+</fo:block>
+</fo:table-cell>
+
+</fo:table-row>
+
+</fo:table-body>
+</fo:table>
+
+</xsl:for-each>
+
+<!-- end posiljke -->
+
+
+
+</xsl:template>
+
+
+
+<xsl:template match="vrsticapl">
+
+
+<fo:table border-width="0pt" border-style="solid" padding="1pt" cellspacing="1pt" >
+<fo:table-column column-width="38mm"/>
+<fo:table-column column-width="59mm"/>
+<fo:table-column column-width="38mm"/>
+<fo:table-column column-width="53mm"/>
+
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white" number-columns-spanned="4">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#C2C2C2">
+Predlistina: <xsl:value-of select="par1/a2"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="par2/a1"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="par2/a2"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="par2/a3"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="par2/a4"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</xsl:template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<xsl:template match="vrstica">
+
+
+<fo:table border-width="0pt" border-style="solid" padding="1pt" cellspacing="1pt" >
+<fo:table-column column-width="38mm"/>
+<fo:table-column column-width="59mm"/>
+<fo:table-column column-width="38mm"/>
+<fo:table-column column-width="53mm"/>
+
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white" number-columns-spanned="4">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#C2C2C2">
+Vrstica: <xsl:value-of select="par1/a2"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+<fo:table-row>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="par5/a1"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white" number-columns-spanned="3">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="par5/a2"/>
+</fo:block>
+</fo:table-cell>
+
+</fo:table-row>
+
+<fo:table-row>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="par2/a1"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="par2/a2"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="par2/a3"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="par2/a4"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="par3/a1"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="par3/a2"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="par3/a3"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="par3/a4"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+<fo:table-row>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="par4/a1"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="par4/a2"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left" font-weight="bold" background-color="#E2E2E2">
+<xsl:value-of select="par4/a3"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-width="1pt" border-style="solid" border-color="white">
+<fo:block font-size="7pt" font-family="verdana" line-height="9pt" space-after.optimum="1pt" text-align="left">
+<xsl:value-of select="par4/a4"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+
+
+
+
+
+
+</fo:table-body>
+</fo:table>
+
+
+
+
+</xsl:template>
+
+
+<!-- end stolpci vrednost -->
+
+
+
+
+
+<!--FOOTER-->
+
+<xsl:template match="footer">
+
+
+
+<fo:table    padding="10pt"  >
+<fo:table-column column-width="20mm"/>
+<fo:table-column column-width="15mm"/>
+<fo:table-column column-width="25mm"/>
+<fo:table-column column-width="8mm"/>
+<fo:table-column column-width="25mm"/>
+<fo:table-column column-width="43mm"/>
+<fo:table-column column-width="52mm"/>
+
+
+<fo:table-body>
+
+
+
+
+
+
+
+<fo:table-row>
+
+
+
+<fo:table-cell number-columns-spanned="7">
+<fo:block font-size="5pt"
+font-family="verdana"
+line-height="6pt"
+space-after.optimum="1pt"
+text-align="justify"
+>
+<xsl:value-of select="g440"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell number-columns-spanned="7" white-space-collapse="false" linefeed-treatment="preserve" white-space-treatment="preserve">
+<fo:block font-size="5pt"
+font-family="verdana"
+line-height="6pt"
+space-after.optimum="1pt"
+text-align="left"
+>
+<xsl:value-of select="p441"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+
+<fo:table-row>
+<fo:table-cell number-columns-spanned="7">
+<fo:block font-size="5pt"
+font-family="verdana"
+line-height="6pt"
+space-after.optimum="1pt"
+text-align="left"
+>
+<xsl:value-of select="g442"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell number-columns-spanned="7" white-space-collapse="false" linefeed-treatment="preserve" white-space-treatment="preserve">
+<fo:block font-size="5pt"
+font-family="verdana"
+line-height="6pt"
+space-after.optimum="1pt"
+text-align="left"
+>
+<xsl:value-of select="p443"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+
+<fo:table-cell number-columns-spanned="5">
+<fo:block font-size="5pt"
+font-family="verdana"
+line-height="6pt"
+space-after.optimum="1pt"
+text-align="justify"
+font-weight="bold">
+<xsl:value-of select="ime"/>
+
+&#160;&#160;
+</fo:block>
+
+</fo:table-cell>
+
+
+<fo:table-cell number-columns-spanned="5">
+<fo:block font-size="5pt"
+font-family="verdana"
+line-height="6pt"
+space-after.optimum="1pt"
+text-align="justify">
+
+</fo:block>
+</fo:table-cell>
+
+<fo:table-cell number-rows-spanned="3">
+<fo:block font-size="5pt"
+font-family="verdana"
+line-height="6pt"
+space-after.optimum="1pt"
+text-align="right"
+font-weight="bold"
+
+>
+<fo:block text-align="center" ><!--<fo:external-graphic  align="center" src="D:/jakarta-tomcat-4.1.29/webapps/popultrade/fofiles/ebc.jpg"/>--></fo:block>
+
+</fo:block>
+</fo:table-cell>
+
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+
+</xsl:template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</xsl:stylesheet>
+
+
+
+
+

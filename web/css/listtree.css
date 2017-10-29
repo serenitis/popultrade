@@ -1,0 +1,20 @@
+
+/// list za li lu z linijami
+
+   ul.tree, ul.tree ul {
+     list-style-type: none;
+     background: url(vline.png) repeat-y;
+     margin: 0;
+     padding: 0;
+   }
+   
+   ul.tree ul {
+     margin-left: 10px;
+   }
+
+   ul.tree li {
+     margin: 0;
+     padding: 0 12px;
+   }
+   
+    

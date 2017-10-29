@@ -1,0 +1,24 @@
+
+29-09-2015 10:29:25 Log: Za: 1520048---28-09-2015 13:18:13 DeliveryStatus: Rejected	DocID: 1675882	DeliveryMessage: Priloga pod zaporedno št. 1: Ni mogoèe preveriti CRL liste za certifikat v podpisu pod zap. številko 1! (Podpisnik: IVANA BUZALKOV)
+	DeliveryDate: Mon Sep 28 15:20:00 CEST 2015	DocDate: Mon Sep 28 13:18:13 CEST 2015
+29-09-2015 09:27:13 Log: Za: 1520048---28-09-2015 13:18:13 DeliveryStatus: Rejected	DocID: 1675882	DeliveryMessage: Priloga pod zaporedno št. 1: Ni mogoèe preveriti CRL liste za certifikat v podpisu pod zap. številko 1! (Podpisnik: IVANA BUZALKOV)
+	DeliveryDate: Mon Sep 28 15:20:00 CEST 2015	DocDate: Mon Sep 28 13:18:13 CEST 2015
+28-09-2015 14:52:23 Log: Za: 1520048---28-09-2015 13:18:13 DeliveryStatus: Rejected	DocID: 1675882	DeliveryMessage: Priloga pod zaporedno št. 1: Ni mogoèe preveriti CRL liste za certifikat v podpisu pod zap. številko 1! (Podpisnik: IVANA BUZALKOV)
+	DeliveryDate: Mon Sep 28 15:20:00 
+
+186
+154
+
+CEST 2015	DocDate: Mon Sep 28 13:18:13 CEST 2015
+
+
+
+
+
+1. predtavitev, grafika, opis kratek, slike, iskanje vsega - text search
+2. vezave na slideje (cas, intervali, ponavljanja, obveznosti, od-do, urnik)
+3. pod elementi slidov (podslide, mozna vezava na druge slide, mozna vezava iz slideta na podlagi izbire, 
+funkcionalnost ucenja (sirsi pojm) tudi z moznostjo casa, funkcionalnost logina in prikaza userju)
+4. slide - opis, slike, video?, izbire na podslide 
+5. social funkcionalnost (forumi, slike, prispevki, ocenjevanje, tekmovanja)
+6. dodatna funkcionalnost (uporaba prednosti telefonov - senzorjev, skeniranje, receptuar na podlagi artiklov, vokalna uporaba, )

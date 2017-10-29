@@ -1,0 +1,59 @@
+<XDtTagDef:tagDef namespace="Form" handler="org.example.antbook.xdoclet.FormTagsHandler"/><%@ include file="/common/taglibs.jsp"%>
+
+<title><fmt:message key="<XDtForm:classNameLower/>Detail.title"/></title>
+<content tag="heading"><fmt:message key="<XDtForm:classNameLower/>Detail.heading"/></content>
+
+<f:view>
+<f:loadBundle var="text" basename="#{<XDtForm:classNameLower/>Form.bundleName}"/>
+
+<h:form id="<XDtForm:classNameLower/>Form" onsubmit="return validate<XDtForm:className/>Form(this)">
+<XDtForm:forAllFields>
+<XDtForm:ifIsIdOrVersionField>
+<h:inputHidden value="#{<XDtForm:classNameLower/>Form.<XDtForm:classNameLower/>.<XDtForm:fieldName/>}" id="<XDtForm:fieldName/>"/>
+</XDtForm:ifIsIdOrVersionField>
+</XDtForm:forAllFields>
+<h:panelGrid columns="3" styleClass="detail" columnClasses="label">
+<XDtForm:forAllFields>
+<XDtForm:ifIsNotIdOrVersionField>
+
+    <h:outputLabel for="<XDtForm:fieldName/>" value="#{text['<XDtForm:classNameLower/>.<XDtForm:fieldName/>']}"/>
+
+  <XDtForm:ifIsBooleanField>
+    <h:selectBooleanCheckbox id="<XDtForm:fieldName/>" value="#{<XDtForm:classNameLower/>Form.<XDtForm:classNameLower/>.<XDtForm:fieldName/>}"/>
+  </XDtForm:ifIsBooleanField>
+  <XDtForm:ifIsNotBooleanField>
+    <h:inputText id="<XDtForm:fieldName/>" value="#{<XDtForm:classNameLower/>Form.<XDtForm:classNameLower/>.<XDtForm:fieldName/>}" required="true">
+        <v:commonsValidator type="required" arg="#{text['<XDtForm:classNameLower/>.<XDtForm:fieldName/>']}"/>
+    </h:inputText>
+  </XDtForm:ifIsNotBooleanField>
+    <t:message for="<XDtForm:fieldName/>" styleClass="fieldError"/>
+</XDtForm:ifIsNotIdOrVersionField>
+</XDtForm:forAllFields>
+
+    <%-- Put in empty <td></td> --%>
+    <h:inputHidden value=""/>
+
+    <h:panelGroup styleClass="buttonBar">
+        <h:commandButton value="#{text['button.save']}" action="#{<XDtForm:classNameLower/>Form.save}" 
+            id="save" styleClass="button"/>
+
+        <c:if test="${not empty <XDtForm:classNameLower/>Form.<XDtForm:classNameLower/>.<XDtMethodEx:idField getType="propertyName"/>}">
+        <h:commandButton value="#{text['button.delete']}" action="#{<XDtForm:classNameLower/>Form.delete}" 
+            id="delete" styleClass="button" onclick="bCancel=false; return confirmDelete('<XDtForm:className/>')"/>
+        </c:if>
+
+        <h:commandButton value="#{text['button.cancel']}" action="cancel" immediate="true"  
+            id="cancel" styleClass="button" onclick="bCancel=true"/>
+    </h:panelGroup>
+
+    <h:inputHidden value=""/>
+</h:panelGrid>
+</h:form>
+
+<v:validatorScript functionName="validate<XDtForm:className/>Form"/>
+
+<script type="text/javascript">
+	Form.focusFirstElement(document.forms["<XDtForm:classNameLower/>Form"]);
+</script>
+
+</f:view>

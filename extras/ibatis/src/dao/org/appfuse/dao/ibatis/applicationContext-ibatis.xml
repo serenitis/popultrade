@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    <!-- Transaction manager for a single JDBC DataSource -->
+    <bean id="transactionManager" 
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <!-- SqlMap setup for iBATIS Database Layer -->
+    <bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+        <property name="configLocation">
+            <value>classpath:/org/appfuse/dao/ibatis/sql-map-config.xml</value>
+        </property>
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <!-- LookupDAO: iBatis implementation --> 
+    <bean id="lookupDAO" class="org.appfuse.dao.ibatis.LookupDAOiBatis"> 
+        <property name="dataSource" ref="dataSource"/>
+        <property name="sqlMapClient" ref="sqlMapClient"/> 
+    </bean> 
+    
+    <!-- UserDAO: iBatis implementation --> 
+    <bean id="userDAO" class="org.appfuse.dao.ibatis.UserDAOiBatis"> 
+        <property name="dataSource" ref="dataSource"/>
+        <property name="sqlMapClient" ref="sqlMapClient"/>  
+    </bean> 
+
+    <!-- RoleDAO: Hibernate implementation -->
+    <bean id="roleDAO" class="org.appfuse.dao.ibatis.RoleDAOiBatis">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="sqlMapClient" ref="sqlMapClient"/>  
+    </bean>
+    
+    <!-- Add new DAOs here -->
+
+</beans>

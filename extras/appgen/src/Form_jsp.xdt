@@ -1,0 +1,55 @@
+<XDtTagDef:tagDef namespace="Form" handler="org.example.antbook.xdoclet.FormTagsHandler"/><%@ include file="/common/taglibs.jsp"%>
+
+<title><fmt:message key="<XDtForm:classNameLower/>Detail.title"/></title>
+<content tag="heading"><fmt:message key="<XDtForm:classNameLower/>Detail.heading"/></content>
+
+<html:form action="save<XDtForm:className/>" method="post" styleId="<XDtForm:classNameLower/>Form"
+    focus="" onsubmit="return validate<XDtForm:className/>Form(this)">
+<table class="detail">
+<XDtForm:forAllFields>
+<XDtForm:ifIsIdOrVersionField>
+<html:hidden property="<XDtForm:fieldName/>"/>
+</XDtForm:ifIsIdOrVersionField>
+<XDtForm:ifIsNotIdOrVersionField>    
+    <tr>
+        <th>
+            <appfuse:label key="<XDtForm:classNameLower/>Form.<XDtForm:fieldName/>"/>
+        </th>
+        <td>
+        <XDtForm:ifIsBooleanField>
+            <html:checkbox property="<XDtForm:fieldName/>" styleId="<XDtForm:fieldName/>"/>
+        </XDtForm:ifIsBooleanField>
+        <XDtForm:ifIsNotBooleanField>
+            <html:text property="<XDtForm:fieldName/>" styleId="<XDtForm:fieldName/>"/>
+        </XDtForm:ifIsNotBooleanField>
+            <html:errors property="<XDtForm:fieldName/>"/>
+        </td>
+    </tr>
+</XDtForm:ifIsNotIdOrVersionField>
+</XDtForm:forAllFields>
+    <tr>
+        <td></td>
+        <td class="buttonBar">
+            <html:submit styleClass="button" property="method.save" onclick="bCancel=false">
+                <fmt:message key="button.save"/>
+            </html:submit>
+
+            <html:submit styleClass="button" property="method.delete"
+                onclick="bCancel=true; return confirmDelete('<XDtForm:className/>')">
+                <fmt:message key="button.delete"/>
+            </html:submit>
+
+            <html:cancel styleClass="button" onclick="bCancel=true">
+                <fmt:message key="button.cancel"/>
+            </html:cancel>
+        </td>
+    </tr>
+</table>
+</html:form>
+
+<script type="text/javascript">
+	Form.focusFirstElement(document.forms["<XDtForm:classNameLower/>Form"]);
+</script>
+
+<html:javascript formName="<XDtForm:classNameLower/>Form" cdata="false" dynamicJavascript="true" staticJavascript="false"/>
+<script type="text/javascript" src="<html:rewrite page="/scripts/validator.jsp"/>"></script>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+    <display-name>popultrade</display-name>
+
+    <!-- precompiled jsp mappings -->
+
+    <!-- Define the basename for a resource bundle for I18N -->
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+        <param-value>ApplicationResources</param-value>
+    </context-param>
+    <!-- Fallback locale if no bundles found for browser's preferred locale -->
+    <!-- Force a single locale using param-name 'javax.servlet.jsp.jstl.fmt.locale' -->
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.fallbackLocale</param-name>
+        <param-value>en</param-value>
+    </context-param>
+    <!-- Context Configuration locations for Spring XML files -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext-resources.xml,/WEB-INF/applicationContext-hibernate.xml</param-value>
+    </context-param>
+
+  <!--  <filter>
+        <filter-name>securityFilter</filter-name>
+        <filter-class>org.acegisecurity.util.FilterToBeanProxy</filter-class>
+        <init-param>
+            <param-name>targetClass</param-name>
+            <param-value>org.acegisecurity.util.FilterChainProxy</param-value>
+        </init-param>
+    </filter>-->
+    <filter>
+        <filter-name>cacheFilter</filter-name>
+        <filter-class>com.opensymphony.oscache.web.filter.CacheFilter</filter-class>
+
+    </filter>
+    <!-- <filter>
+        <filter-name>clickstreamFilter</filter-name>
+        <filter-class>com.opensymphony.clickstream.ClickstreamFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>-->
+    <filter>
+        <filter-name>hibernateFilter</filter-name>
+        <filter-class>com.popultrade.model.OpenSessionInViewFilter</filter-class>
+		
+    </filter>
+   <!-- <filter>
+        <filter-name>rewriteFilter</filter-name>
+        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+        <init-param>
+            <param-name>logLevel</param-name>
+            <param-value>commons</param-value>
+        </init-param>
+    </filter>
+   <filter>
+        <filter-name>sitemesh</filter-name>
+        <filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>exportFilter</filter-name>
+        <filter-class>org.displaytag.filter.ResponseOverrideFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>compressionFilter</filter-name>
+        <filter-class>org.appfuse.webapp.filter.GZIPFilter</filter-class>
+    </filter>
+    <filter>
+	    <filter-name>localeFilter</filter-name>
+	    <filter-class>org.appfuse.webapp.filter.LocaleFilter</filter-class>
+    </filter>-->
+
+  <!--  <filter-mapping>
+        <filter-name>localeFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>localeFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>securityFilter</filter-name>
+        <url-pattern>/j_security_check</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>securityFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>securityFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>    -->
+    <!-- Commented out for 2 reasons: 1) it's a pain when developing JSPs, and
+                                      2) it causes the Signup webtest to fail -->
+    <!--filter-mapping>
+        <filter-name>cacheFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping-->
+     <filter-mapping>
+        <filter-name>hibernateFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+        <url-pattern>/xml</url-pattern>
+        <url-pattern>/HLP</url-pattern>
+         <url-pattern>/INF</url-pattern>
+         <url-pattern>/option</url-pattern>
+         <url-pattern>/FREQUEST</url-pattern>
+    </filter-mapping>   
+  <!-- <filter-mapping>
+       <filter-name>clickstreamFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>-->
+   <!-- <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>exportFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>compressionFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>rewriteFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+     
+    </filter-mapping>-->
+   <!-- <filter-mapping>
+        <filter-name>sitemesh</filter-name>
+        <url-pattern>/*</url-pattern>
+       
+    </filter-mapping>-->
+
+   <!-- <listener>
+        <listener-class>com.opensymphony.clickstream.ClickstreamListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>net.sf.navigator.menu.MenuContextListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>com.popultrade.webapp.listener.StartupListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>com.opensymphony.xwork.spring.SpringObjectFactoryListener</listener-class>
+    </listener>-->
+  <!--  <listener>
+        <listener-class>org.appfuse.webapp.listener.UserCounterListener</listener-class>
+    </listener>
+    
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>com.opensymphony.webwork.dispatcher.ServletDispatcher</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+ 
+    <servlet>
+        <servlet-name>dwr-invoker</servlet-name>
+        <servlet-class>uk.ltd.getahead.dwr.DWRServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </servlet>-->
+    
+          <servlet>
+    <servlet-name>HLP</servlet-name>
+
+    <servlet-class>com.popultrade.webapp.HttpGetLog</servlet-class>
+  </servlet>
+    
+      <servlet>
+    <servlet-name>ClientGet</servlet-name>
+
+    <servlet-class>com.popultrade.webapp.ClientGet</servlet-class>
+  </servlet>
+        <servlet>
+    <servlet-name>ClientGetInfos</servlet-name>
+
+    <servlet-class>com.popultrade.webapp.ClientGetInfos</servlet-class>
+  </servlet>
+    
+          <servlet>
+    <servlet-name>ClientGetjsp</servlet-name>
+
+    <jsp-file>/clientgetjsp.jsp</jsp-file>
+  </servlet>
+      <servlet>
+    <servlet-name>ClientGetOption</servlet-name>
+
+    <servlet-class>com.popultrade.webapp.ClientGetOption</servlet-class>
+  </servlet>
+    <servlet>
+    <servlet-name>ClientGetFiles</servlet-name>
+
+    <servlet-class>com.popultrade.webapp.ClientGetFiles</servlet-class>
+  </servlet>
+  <servlet>
+       <servlet-name>listing</servlet-name>
+       <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+       <init-param>
+           <param-name>debug</param-name>
+           <param-value>0</param-value>
+       </init-param>
+       <init-param>
+           <param-name>listings</param-name>
+           <param-value>false</param-value>
+       </init-param>
+       <load-on-startup>1</load-on-startup>
+   </servlet>
+  
+  <!--  <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>dwr-invoker</servlet-name>
+        <url-pattern>/dwr/*</url-pattern>
+    </servlet-mapping>  -->
+    
+          <servlet>
+    <servlet-name>Servlet1</servlet-name>
+    <display-name>startpopultrade</display-name>
+    <description>Start popultrade</description>
+    <servlet-class>com.popultrade.webapp.Startpopultrade</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+      <servlet-mapping>
+    <servlet-name>HLP</servlet-name>
+    <url-pattern>/HLP</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ClientGet</servlet-name>
+    <url-pattern>/xml</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>ClientGetInfos</servlet-name>
+    <url-pattern>/INF</url-pattern>
+  </servlet-mapping>
+
+    <servlet-mapping>
+    <servlet-name>ClientGetjsp</servlet-name>
+    <url-pattern>/xmlc</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>ClientGetOption</servlet-name>
+    <url-pattern>/option</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet-mapping>
+    <servlet-name>ClientGetFiles</servlet-name>
+    <url-pattern>/FREQUEST</url-pattern>
+  </servlet-mapping>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <welcome-file-list>
+        <welcome-file>indexne.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
